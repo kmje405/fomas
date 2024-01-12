@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-# FOMAS
-
-## This is the repository for the Friends of Mountainair Animal Shelter website.
-=======
-# Astro Starter Kit: Blog
+This site will become the new FOMAS.org website.
 
 ```sh
 npm create astro@latest -- --template blog
@@ -71,4 +66,3 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 ## Credit
 
 This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
->>>>>>> 2e06da0 (initial commit)
