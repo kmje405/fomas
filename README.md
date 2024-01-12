@@ -1,3 +1,3 @@
-#FOMAS
+# FOMAS
 
-##This is the repository for the Friends of Mountainair Animal Shelter website.
+## This is the repository for the Friends of Mountainair Animal Shelter website.
