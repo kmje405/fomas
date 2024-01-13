@@ -1,50 +1,49 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <p class="text-xl">
+        Nestled at the base of the Manzano Mountains is the small community of
+        Mountainair, New Mexico. The town itself holds 850+ citizens, but with
+        the folks in the surrounding areas there are near 1500 people in the
+        community. FoMAS has had the good fortune of being able to collaborate
+        with the Town of Mountainair. Together we have turned what was once a
+        "dog pound" into a legitimate dog shelter. The shelter itself has only
+        eight kennels, but one of the advantages of having so few kennels is
+        that every dog that comes through the doors of the Mountainair Animal
+        Shelter receives more individualized attention than at other, larger
+        shelters. We do not euthanize at our shelter, so if a dog comes in with
+        serious behavioral or medical issues, we do everything in our capacity
+        to address those needs, AND we have been 97% successful in these
+        efforts, placing those dogs in permanent homes. Friends of the
+        Mountainair Animal Shelter volunteers provide the dogs with at least two
+        walks a day. Sometimes the dogs go on “field trips” to Santa Fe or
+        Albuquerque. Thanks to our generous donors, they have plenty of toys to
+        play with and Kongs filled with treats to keep them busy. We have the
+        advantage of being located at the rodeo grounds, so the rodeo arena is a
+        great place to play fetch and romp in play groups with other dogs! Many
+        of our foster families are retired and home most of the day to provide
+        the TLC that some of our sick or neglected dogs need. Some of our foster
+        homes are situated on 20+ acres, so the dogs have a peaceful spacious
+        place to rehabilitate from either a medical or behavioral issue. Our
+        volunteers single-handedly have rescued dozens of dogs from high-kill
+        shelters, rehabilitated them for medical problems or emotional stress
+        and gotten them adopted into loving homes. We believe there is a
+        permanent home for EVERY. SINGLE. DOG. That’s why FOMAS is a great
+        organization to support!
+      </p>
+    </main>
+    <Footer />
+  </body>
 </html>
