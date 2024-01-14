@@ -3,7 +3,7 @@ const today = new Date();
 import { MAILING_ADDRESS, PHONE_NUMBER } from "../consts";
 ---
 
-<footer>
+<footer class="bg-blue-600 text-white">
 	<p>{ PHONE_NUMBER }</p>
 	<p>{ MAILING_ADDRESS }</p>
 	<p>&copy; {today.getFullYear()} Fomas.org. All rights reserved.</p>
@@ -11,8 +11,6 @@ import { MAILING_ADDRESS, PHONE_NUMBER } from "../consts";
 <style>
 	footer {
 		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
 		text-align: center;
 	}
 	.social-links {
@@ -23,9 +21,7 @@ import { MAILING_ADDRESS, PHONE_NUMBER } from "../consts";
 	}
 	.social-links a {
 		text-decoration: none;
-		color: rgb(var(--gray));
 	}
 	.social-links a:hover {
-		color: rgb(var(--gray-dark));
 	}
 </style>
