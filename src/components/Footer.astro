@@ -1,18 +1,21 @@
 ---
 const today = new Date();
 import { MAILING_ADDRESS, PHONE_NUMBER } from "../consts";
+import Header from "./Header.astro";
 ---
 
-<footer class="bg-blue-600 text-white">
+<footer class="bg-blue-900 text-white">
 	<p>{ PHONE_NUMBER }</p>
 	<p>{ MAILING_ADDRESS }</p>
 	<p>&copy; {today.getFullYear()} Fomas.org. All rights reserved.</p>
 	<p>Friends of Mountainair Animal Shelter is a certified 501c3 non-profit organization</p>
 </footer>
+<Header/>
+
 <style>
 	footer {
 		padding: 2em 1em 6em 1em;
-		text-align: left;
+		text-align: right;
 	}
 	.social-links {
 		display: flex;

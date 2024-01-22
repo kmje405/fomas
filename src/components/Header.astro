@@ -5,9 +5,8 @@ import { SITE_TITLE } from "../consts";
 
 <header class="bg-blue-600">
   <nav>
-    <h2><a href="/">{SITE_TITLE}</a></h2>
+    <img src="images/FOMASlogo_h.wh.png" alt="the fomas logo">
     <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
       <HeaderLink href="/volunteer">Get Involved</HeaderLink>
@@ -47,12 +46,17 @@ import { SITE_TITLE } from "../consts";
   }
   nav a.active {
     text-decoration: none;
-    border-bottom-color: var(--accent);
+    border-bottom: 3px solid white;
   }
   .social-links,
   .social-links a {
     display: flex;
   }
+
+  img {
+    height: 3em;
+  }
+  )
   @media (max-width: 720px) {
     .social-links {
       display: none;
