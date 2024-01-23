@@ -2,30 +2,31 @@
 const today = new Date();
 import { MAILING_ADDRESS, PHONE_NUMBER } from "../consts";
 import Header from "./Header.astro";
+import Button from "./Button.astro";
 ---
 
-<footer class="bg-blue-900 text-white">
-	<p>{ PHONE_NUMBER }</p>
-	<p>{ MAILING_ADDRESS }</p>
-	<p>&copy; {today.getFullYear()} Fomas.org. All rights reserved.</p>
-	<p>Friends of Mountainair Animal Shelter is a certified 501c3 non-profit organization</p>
+<footer class="bg-blue-900 text-white px-6 py-4 flex flex-wrap justify-between items-center overflow-hidden">
+  <div class="flex-1 min-w-[30%]">
+    <h1 class="text-4xl lg:text-6xl text-nowrap mb-2">Get In Touch!</h1>
+    <p class="mb-2">{MAILING_ADDRESS}</p>
+    <p class="mb-2">{PHONE_NUMBER}</p>
+  </div>
+  <div class="flex-1 min-w-[40%] flex flex-col items-start">
+    <div class="flex gap-4 lg:gap-8 items-center mb-4 text-nowrap overflow-hidden">
+      <Button>Email</Button>
+      <Button>Facebook</Button>
+      <Button>Adoption Application</Button>
+      <Button>Resources</Button>
+      <img
+        src="/images/fullPawPrint.svg"
+        alt="Paw Print Logo"
+        class="min-h-20 lg:max-h-40 opacity-30 filter invert"
+      />
+    </div>
+    <p class="text-xs lg:text-sm mt-4 mb-8">
+      Friends of Mountainair Animal Shelter is a certified 501c3 non-profit organization. <br>
+      &copy; {today.getFullYear()} Fomas.org. All rights reserved.
+    </p>
+  </div>
 </footer>
-<Header/>
-
-<style>
-	footer {
-		padding: 2em 1em 6em 1em;
-		text-align: right;
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-	}
-	.social-links a:hover {
-	}
-</style>
+<Header />

@@ -1,16 +1,24 @@
 ---
-title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
+title: 'Current Projects'
+description: 'Learn about our most recent projects.'
+pubDate: 'Oct 20 2022'
 heroImage: '/images/blog-placeholder-3.jpg'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+While FOMAS has accomplished a great deal in only two-and-a-half years, there are many more projects either underway or in the planning stages. Take a look at what’s up our sleeves!
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+Mobile Spay/Neuter Clinics
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+Since 2018, we have been working with Bro and Tracy Animal Welfare’s mobile spay/neuter clinic. The clinic has visited Mountainair and Torrance County to provide low cost spay and neutering services for dogs and cats. We would like to keep providing this service to our community and help cover the cost of those pets who need to be spayed and neutered. As of now, the Bro and Tracy S/N Clinic has fixed close to 200 animals in Torrance County! This effort helps keep unwanted dogs and cats from reproducing and ending up in our shelters.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+In addition to offering the mobile clinic, plans are underway to establish a fund to help those who cannot afford to have their pets fixed.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+Fence Program
+
+One of our main goals is to support our citizens to be able to keep their dogs safely and healthily at home. We receive many stray dogs that have escaped their yards or who have broken away from being tied out (which is still legal in some parts of New Mexico.) The proposed fencing program would offer a safe alternative to keep pets safe at home by providing fenced-in yards.
+
+Fencing can be expensive, and with the help of donated funds, grants and volunteer labor, FOMAS will help to patch fences, build fences, or donate a dog run to those that are in need of such services.
+
+Humane Education
+
+Providing services such as spay and neuter or building fences is important, but FOMAS also believes in the importance of humane education. We are working on programs that will bring humane education to our community’s children. This would involve volunteers working with groups of children through the schools or civic organizations such as the  Girl or Boy Scouts. Humane education includes understanding basic pet care and the importance of spaying and neutering animals. As we broaden our scope, we want to offer opportunities such as a “pet camp” for kids to come to the shelter and “volunteer” for a week. This early education about the joys and sorrows of shelter life will help them develop empathy, teamwork, and confidence as they see how their love and efforts have a direct impact on a dog in need.
