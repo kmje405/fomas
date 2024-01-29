@@ -1,5 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import Banner from "../components/Banner.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
@@ -13,10 +14,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <body>
     <Header title={SITE_TITLE} />
     <main class="h-full">
-      <h1 class="text-6xl p-4 text-nowrap text-blue-600 font-bold border border-red-500 w-1/2">Why FOMAS?</h1>
-      <p class="w-1/2 p-4">Every dog that comes through the doors of the Mountainair Animal Shelter receives more individualized attention than at other, larger shelters. We do not euthanize at our shelter, so if a dog comes in with serious behavioral or medical issues, we do everything in our capacity to address those needs, AND we have been 97% successful in these efforts, placing those dogs in permanent homes.
-      Our volunteers have single-handedly rescued dozens of dogs from high-kill shelters, rehabilitated them for medical problems or emotional stress and gotten them adopted into loving homes. We believe there is a permanent home for every single dog.</p>
-    </main>
-    <Footer />
+      <Banner />
+    <h1 class="text-6xl p-4 text-nowrap text-blue-600 font-bold border border-red-500 w-1/2">Why {SITE_TITLE}</h1>
+      <p class="w-1/2 p-4">
+        Every dog that comes through the doors of the Mountainair Animal Shelter
+        receives more individualized attention than at other, larger shelters.
+        We do not euthanize at our shelter, so if a dog comes in with serious
+        behavioral or medical issues, we do everything in our capacity to
+        address those needs, AND we have been 97% successful in these efforts,
+        placing those dogs in permanent homes. Our volunteers have
+        single-handedly rescued dozens of dogs from high-kill shelters,
+        rehabilitated them for medical problems or emotional stress and gotten
+        them adopted into loving homes. We believe there is a permanent home for
+        every single dog.
+      </p>
+      </main>
+      <Footer />
+    </h1>
   </body>
 </html>
