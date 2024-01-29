@@ -16,29 +16,44 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <main class="h-full">
       <Banner />
       <div class="bg-blue-200 flex justify-center w-full">
-        <div class="bg-white w-[95%] flex flex-col justify-center shadow-xl border border-red-500">
-            <h1 class="text-6xl p-4 text-nowrap text-blue-600 font-bold border border-red-500 w-1/2">
-                Why {SITE_TITLE}
-            </h1>
-            <p class="w-1/2 p-4">
-                Every dog that comes through the doors of the Mountainair Animal
-                Shelter receives more individualized attention than at other, larger
-                shelters. We do not euthanize at our shelter, so if a dog comes in
-                with serious behavioral or medical issues, we do everything in our
-                capacity to address those needs, AND we have been 97% successful in
-                these efforts, placing those dogs in permanent homes. Our volunteers
-                have single-handedly rescued dozens of dogs from high-kill shelters,
-                rehabilitated them for medical problems or emotional stress and gotten
-                them adopted into loving homes. We believe there is a permanent home
-                for every single dog.
-            </p>
-            <img
-                class="invert max-w-80"
-                src="/images/FOMASlogo_h.wh.png"
-                alt=""
-            />
+        <div class="bg-white w-[95%] grid grid-cols-2 grid-rows-2 gap-4 p-4 shadow-xl border border-red-500">
+            <div class="quad1 flex flex-col justify-center items-center border border-red-500">
+                <h1 class="text-6xl text-nowrap text-blue-600 font-bold">
+                    Why {SITE_TITLE}
+                </h1>
+                <p class=" p-4">
+                  Every dog that comes through the doors of the Mountainair Animal
+                  Shelter receives more individualized attention than at other, larger
+                  shelters. We do not euthanize at our shelter, so if a dog comes in
+                  with serious behavioral or medical issues, we do everything in our
+                  capacity to address those needs, AND we have been 97% successful in
+                  these efforts, placing those dogs in permanent homes. Our volunteers
+                  have single-handedly rescued dozens of dogs from high-kill shelters,
+                  rehabilitated them for medical problems or emotional stress and gotten
+                  them adopted into loving homes. We believe there is a permanent home
+                  for every single dog.
+              </p>
+              <img
+              class="invert max-w-full"
+              src="/images/FOMASlogo_h.wh.png"
+              alt=""
+          />
+            </div>
+            <div class="quad2 border border-red-500">
+              <img src="/images/vertPaw1.svg" alt="">
+               
+            </div>
+            <div class=" quad3 border border-red-500">
+              <img src="/images/horizPaw1.png" alt="">
+
+            </div>
+            <div class="quad4 border border-red-500">
+              <img src="/images/horizPaw1.png" alt="">
+
+            </div>
         </div>
     </div>
+    
     
     </main>
     <Footer />
