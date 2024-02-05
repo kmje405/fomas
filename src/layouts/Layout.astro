@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
 	description?: string;
@@ -20,8 +21,9 @@ const { title ="FOMAS", description="The Friends of Mountainair Animal Shelter",
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body min-h-screen>
+	<body class="flex-col min-h-screen" >
 		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
