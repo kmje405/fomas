@@ -2,7 +2,13 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+	  extend: {
+		backgroundImage: {
+		  'curly-div-teal-300': "url('/line-twTeal300.png')",
+		  'pawPadSingle': "url('/pawPad.svg')",
+		}
+	  },
 	},
 	plugins: [],
-}
+  }
+  
