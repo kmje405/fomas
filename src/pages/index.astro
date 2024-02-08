@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/BaseLayout.astro"
 import Main from "../components/Main.astro"
 import BlogCard from "../components/BlogCard.astro"
 import SucessStoryCard from "../components/SucessStoryCard.astro"
@@ -10,8 +10,9 @@ import '@fontsource/roboto/700.css';
 
 ---
 
-<Layout title="FOMAS | Home">
+<Layout pageTitle="FOMAS | Home">
     <Main>
-        <p>hello world</p>
+        <BlogCard />
+        <SucessStoryCard />
     </Main>
 </Layout>

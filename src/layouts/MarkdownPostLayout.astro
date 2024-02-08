@@ -1,0 +1,15 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter} = Astro.props;
+---
+<BaseLayout pageTitle='Fomas'>
+  <div class="text-center max-w-[80%] justify-center mx-auto">
+    <h1 class="text-3xl mt-8">{frontmatter.title}</h1>
+    <p class="text-sm">{frontmatter.pubDate.slice(0,10)}</p>
+    <p class="text-md">{frontmatter.description}</p>
+    <p class="text-sm mb-8">Written by: {frontmatter.author}</p>
+    <!-- Apply mx-auto to center the image horizontally -->
+    <img class="mx-auto w-[1024px] rounded-3xl mb-8" src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <slot  />
+  </div>
+</BaseLayout>
