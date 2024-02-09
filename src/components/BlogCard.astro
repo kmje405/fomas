@@ -3,14 +3,13 @@
 // You can define your data or import it from elsewhere
 let author = "John Doe";
 let publishDate = "February 6, 2024";
-let description =
-  "This is an example description that should be limited to three lines in display.";
+let description = "This is an example description that should be limited to three lines in display.";
 let title = "Title of the article";
 ---
 
-<div class="card mt-8 rounded-3xl outline outline-slate-200 shadow-3xl">
+<div class="card mt-8 rounded-3xl outline outline-slate-200 shadow-3xl max-w-80">
   <a href="/blog-post">
-    <img class="rounded-3xl" src="/bush.jpeg" alt="descriptive text" />
+    <img class="rounded-3xl" src="/doggy.jpeg" alt="descriptive text" />
     <div class="p-4 ">
       <p class="publish-date text-transform: uppercase text-sm text-gray-500 italic">{publishDate}</p>
       <h2 class="title text-2xl font-semibold mb-2">{title}</h2>

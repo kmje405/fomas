@@ -1,31 +1,37 @@
-<header class="flex justify-between items-center gap-2 bg-blue-600 text-white font-bold text-nowrap">
-  <div>
-    <img class="h-20 min-w-max" src="/FOMASlogo_hWh.png" alt="The official Friends of Mountainair Animal Shelter Logo">
+---
+// No imports or frontmatter needed for this simple example
+---
+
+<header class="flex flex-col sm:flex-row justify-between items-center bg-blue-600 text-white">
+  <div class="flex justify-between items-center w-full sm:w-auto">
+    <img class="h-20" src="/FOMASlogo_hWh.png" alt="The official Friends of Mountainair Animal Shelter Logo">
+    <!-- Hamburger Icon -->
+    <button id="hamburger" class="sm:hidden px-2 py-1">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    </button>
   </div>
-  <nav class="px-24 min-w-1/2 hidden sm:block">
-    <ul class="flex space-x-4">
-      <li><a href="/" class="hover:border-b-4 hover:border-white pb-6 transition duration-300 ease-in-out">Home</a></li>
-      <li>
-        <a href="/about" class="hover:border-b-4 hover:border-white pb-6 transition duration-300 ease-in-out">About</a>
-      </li>
-      <li>
-        <a href="/blog" class="hover:border-b-4 hover:border-white pb-6 transition duration-300 ease-in-out">Blog</a>
-      </li>
-      <li>
-        <a href="/dogs" class="hover:border-b-4 hover:border-white pb-6 transition duration-300 ease-in-out">Dogs</a>
-      </li>
-      <li>
-        <a href="/get-involved" class="hover:border-b-4 hover:border-white pb-6 transition duration-300 ease-in-out">Get Involved</a>
-      </li>
-      <li>
-        <a href="/resources" class="hover:border-b-4 hover:border-white pb-6 transition duration-300 ease-in-out">Resources</a>
-      </li>
-      <li>
-        <a href="/donate" class="hover:border-b-4 hover:border-white pb-6 transition duration-300 ease-in-out">Donate</a>
-      </li>
-      <li>
-        <a href="/contact" class="hover:border-b-4 hover:border-white pb-6 transition duration-300 ease-in-out">Contact</a>
-      </li>
+  <!-- Navigation Links -->
+  <nav class="hidden w-full sm:flex sm:items-center sm:w-auto" id="nav-menu">
+    <ul class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 p-4 sm:p-0">
+      <li><a href="/" class="block hover:bg-blue-700 p-4 rounded text-center">Home</a></li>
+      <li><a href="/about" class="block hover:bg-blue-700 p-4 rounded text-center">About</a></li>
+      <li><a href="/blog" class="block hover:bg-blue-700 p-4 rounded text-center">Blog</a></li>
+      <li><a href="/dogs" class="block hover:bg-blue-700 p-4 rounded text-center">Dogs</a></li>
+      <li><a href="/get-involved" class="block hover:bg-blue-700 p-4 rounded text-center text-nowrap">Get Involved</a></li>
+      <li><a href="/resources" class="block hover:bg-blue-700 p-4 rounded text-center">Resources</a></li>
+      <li><a href="/donate" class="block hover:bg-blue-700 p-4 rounded text-center">Donate</a></li>
+      <li><a href="/contact" class="block hover:bg-blue-700 p-4 rounded text-center">Contact</a></li>
     </ul>
   </nav>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+  });
+</script>
