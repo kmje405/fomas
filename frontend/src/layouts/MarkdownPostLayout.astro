@@ -1,8 +1,10 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Main from '../components/Main.astro';
 const { frontmatter} = Astro.props;
 ---
 <BaseLayout pageTitle='Fomas'>
+  <Main>
   <div class="text-center mx-auto">
     <h1 class="text-3xl mt-8">{frontmatter.title}</h1>
     <p class="text-sm">{frontmatter.pubDate.slice(0,10)}</p>
@@ -12,4 +14,5 @@ const { frontmatter} = Astro.props;
     <img class="mx-auto w-[1024px] rounded-3xl mb-8" src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
     <slot  />
   </div>
+</Main>
 </BaseLayout>
