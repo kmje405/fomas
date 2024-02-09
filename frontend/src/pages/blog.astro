@@ -1,21 +1,42 @@
 ---
 import Main from "../components/Main.astro";
 import Layout from "../layouts/BaseLayout.astro";
+// Fetch all posts
 const allPosts = await Astro.glob('../pages/posts/*.md');
+const posts = allPosts.map((post) => {
+  const { title, pubDate, author, description, image } = post.frontmatter;
+  return {
+    url: post.url,
+    title,
+    pubDate,
+    author,
+    description,
+    image,
+  };
+});
 const pageTitle = "Welcome to the FOMAS Blog!";
-import BlogPostFull from "../components/BlogPostFull.astro"
+import BlogCard from "../components/BlogCard.astro";
 ---
 
 <Layout pageTitle={pageTitle}>
-  <Main>
-    <div class="min-h-screenpy-10">
+    <div class="min-h-screen py-10">
       <div class="max-w-4xl mx-auto px-4">
         <h1 class="text-4xl font-bold text-center text-gray-900 my-8">{pageTitle}</h1>
         <p class="text-lg text-gray-700 mb-4">This is where I will post about my journey learning Astro.</p>
-        <ul class="pl-5 space-y-2">
-          {allPosts.map((post) => <BlogPostFull url={post.url} title={post.frontmatter.title} />)}
-        </ul>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <BlogCard
+              key={post.url}
+              url={post.url}
+              title={post.title}
+              pubDate={post.pubDate}
+              author={post.author}
+              description={post.description}
+              image={post.image}
+            />
+          ))}
+        </div>
+        </div>
       </div>
     </div>
-  </Main>
 </Layout>

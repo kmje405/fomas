@@ -1,20 +1,17 @@
 ---
-// JavaScript logic here
-// You can define your data or import it from elsewhere
-let author = "John Doe";
-let publishDate = "February 6, 2024";
-let description = "This is an example description that should be limited to three lines in display.";
-let title = "Title of the article";
+// Define the props that BlogCard will accept
+const { title, author, description, pubDate, image, url } = Astro.props;
 ---
 
-<div class="card mt-8 rounded-3xl outline outline-slate-200 shadow-3xl max-w-80">
-  <a href="/blog-post">
-    <img class="rounded-3xl" src="/doggy.jpeg" alt="descriptive text" />
-    <div class="p-4 ">
-      <p class="publish-date text-transform: uppercase text-sm text-gray-500 italic">{publishDate}</p>
+<div class="card mt-8 rounded-3xl outline outline-slate-200 shadow-3xl max-w-md mx-auto">
+  <a href={url}>
+    <!-- Use the image URL directly, with a fallback to a default image -->
+    <img class="rounded-3xl" src={image?.url || '/default-image.jpeg'} alt={image?.alt || 'Default image'} />
+    <div class="p-4">
+      <p class="publish-date uppercase text-sm text-gray-500 italic">{pubDate}</p>
       <h2 class="title text-2xl font-semibold mb-2">{title}</h2>
       <p class="author text-lg text-gray-700 mb-4">{author}</p>
-      <p class="description text-gray-600 truncate ...">{description}</p>
+      <p class="description text-gray-600 truncate">{description}</p>
     </div>
   </a>
 </div>
