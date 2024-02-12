@@ -11,7 +11,7 @@ special_needs: false
 friendly_with: ["Kids", "Dogs"]
 not_friendly_with: ["Cats"]
 bio: "Meet Buddy, a cheerful and friendly Golden Retriever with a heart of gold. Buddy loves playing fetch, enjoys long walks in the park, and is always ready for cuddle time. He's looking for a loving forever home where he can spread his joy."
-image_url: "./doggy.jpeg"
+image_url: "/doggy.jpeg"
 adoption_status: "Available"
 ---
 
