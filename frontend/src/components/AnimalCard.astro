@@ -19,7 +19,7 @@ const {
 ---
 
 <div
-  class="card min-w-[320px] mt-8 bg-white rounded-3xl outline outline-slate-200 shadow-xl"
+  class="card min-w-[320px] mt-8 rounded-3xl bg-blue-200 outline outline-slate-200 shadow-xl"
 >
   <a href={url} class="flex flex-col h-full">
     <!-- Use the image URL directly, with a fallback to a default image -->
@@ -29,24 +29,24 @@ const {
       alt={`Photo of ${title}`}
     />
     <div class="p-4 flex flex-col flex-grow">
-      <h2 class="title text-xl font-semibold">{title}</h2>
-      <p class="breed text-md text-gray-700">Breed: {breed}</p>
-      <p class="age text-md text-gray-700">Age: {age}</p>
-      <p class="gender text-md text-gray-700">Gender: {gender}</p>
-      <p class="size text-md text-gray-700">Size: {size}</p>
-      <p class="vaccinated text-md text-gray-700">
+      <h2 class="title text-xl font-semibold text-blue-900">{title}</h2>
+      <p class="breed text-md text-blue-950">Breed: {breed}</p>
+      <p class="age text-md text-blue-950">Age: {age}</p>
+      <p class="gender text-md text-blue-950">Gender: {gender}</p>
+      <p class="size text-md text-blue-950">Size: {size}</p>
+      <p class="vaccinated text-md text-blue-950">
         Vaccinated: {vaccinated ? "Yes" : "No"}
       </p>
-      <p class="spayed_neutered text-md text-gray-700">
+      <p class="spayed_neutered text-md text-blue-950">
         Spayed/Neutered: {spayed_neutered ? "Yes" : "No"}
       </p>
-      <p class="special_needs text-md text-gray-700">
+      <p class="special_needs text-md text-blue-950">
         Special Needs: {special_needs ? "Yes" : "No"}
       </p>
-      <p class="friendly_with text-md text-gray-700">
+      <p class="friendly_with text-md text-blue-950">
         Friendly With: {friendly_with.join(", ")}
       </p>
-      <p class="not_friendly_with text-md text-gray-700">
+      <p class="not_friendly_with text-md text-blue-950">
         Not Friendly With: {not_friendly_with.join(", ")}
       </p>
       <p class="bio text-gray-600 text-sm flex-grow line-clamp-3">{bio}</p>
