@@ -3,7 +3,7 @@
 const { title, author, description, pubDate, image, url } = Astro.props;
 
 // Function to format date
-function formatDate(dateString) {
+function formatDate(dateString:Date) {
   const date = new Date(dateString);
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   return date.toLocaleDateString('en-US', options);
