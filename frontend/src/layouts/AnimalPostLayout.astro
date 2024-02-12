@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Main from '../components/Main.astro';
+const { frontmatter } = Astro.props;
+---
+<BaseLayout pageTitle={frontmatter.title}>
+  <Main>
+    <div class="text-center mx-auto max-w-4xl">
+      <h1 class="text-4xl font-bold mt-8">{frontmatter.title}</h1>
+      <img class="mx-auto w-full max-w-md rounded-xl my-8" src={frontmatter.image_url} alt={`Photo of ${frontmatter.title}`} />
+      <div class="text-lg">
+        <p><strong>Breed:</strong> {frontmatter.breed}</p>
+        <p><strong>Age:</strong> {frontmatter.age}</p>
+        <p><strong>Gender:</strong> {frontmatter.gender}</p>
+        <p><strong>Size:</strong> {frontmatter.size}</p>
+        <p><strong>Vaccinated:</strong> {frontmatter.vaccinated ? 'Yes' : 'No'}</p>
+        <p><strong>Spayed/Neutered:</strong> {frontmatter.spayed_neutered ? 'Yes' : 'No'}</p>
+        <p><strong>Special Needs:</strong> {frontmatter.special_needs ? 'Yes' : 'No'}</p>
+        <p><strong>Friendly With:</strong> {frontmatter.friendly_with.join(', ')}</p>
+        <p><strong>Not Friendly With:</strong> {frontmatter.not_friendly_with.join(', ')}</p>
+        <p class="my-4 italic">"{frontmatter.bio}"</p>
+        <p class="text-sm mb-4">Adoption Status: <strong>{frontmatter.adoption_status}</strong></p>
+      </div>
+      <slot />
+    </div>
+  </Main>
+</BaseLayout>

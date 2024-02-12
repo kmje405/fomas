@@ -1,10 +1,59 @@
 ---
-import Main from '../components/Main.astro';
-import Layout from '../layouts/BaseLayout.astro';
+import Main from "../components/Main.astro";
+import Layout from "../layouts/BaseLayout.astro";
+// Fetch all animals
+const allAnimals = await Astro.glob('../pages/animals/*.md');
+const animals = allAnimals.map((animal) => {
+  const { title, breed, age, gender, size, vaccinated, spayed_neutered, special_needs, friendly_with, not_friendly_with, bio, image_url, adoption_status } = animal.frontmatter;
+  return {
+    url: animal.url,
+    title,
+    breed,
+    age,
+    gender,
+    size,
+    vaccinated,
+    spayed_neutered,
+    special_needs,
+    friendly_with,
+    not_friendly_with,
+    bio,
+    image_url,
+    adoption_status,
+  };
+});
+const pageTitle = "Adoptable Animals";
+import AnimalCard from "../components/AnimalCard.astro";
 ---
 
-<Layout pageTitle="FOMAS | Dogs">
-	<Main>
-		<h1>Dogs</h1>
-	</Main>
+<Layout pageTitle={pageTitle}>
+  <Main>
+    <div class="min-h-screen py-10">
+      <div class="max-w-6xl mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center text-gray-900 my-8">{pageTitle}</h1>
+        <p class="text-lg text-gray-700 mb-4">Meet our adorable animals looking for their forever homes.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {animals.map((animal) => (
+            <AnimalCard
+              key={animal.url}
+              url={animal.url}
+              title={animal.title}
+              breed={animal.breed}
+              age={animal.age}
+              gender={animal.gender}
+              size={animal.size}
+              vaccinated={animal.vaccinated}
+              spayed_neutered={animal.spayed_neutered}
+              special_needs={animal.special_needs}
+              friendly_with={animal.friendly_with}
+              not_friendly_with={animal.not_friendly_with}
+              bio={animal.bio}
+              image_url={animal.image_url}
+              adoption_status={animal.adoption_status}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </Main>
 </Layout>
