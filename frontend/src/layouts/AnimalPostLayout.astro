@@ -18,7 +18,7 @@ const { frontmatter } = Astro.props;
         <p><strong>Special Needs:</strong> {frontmatter.special_needs ? 'Yes' : 'No'}</p>
         <p><strong>Friendly With:</strong> {frontmatter.friendly_with.join(', ')}</p>
         <p><strong>Not Friendly With:</strong> {frontmatter.not_friendly_with.join(', ')}</p>
-        <p class="my-4 italic">"{frontmatter.bio}"</p>
+        <p class="my-4 mx-auto italic">"{frontmatter.bio}"</p>
         <p class="text-sm mb-4">Adoption Status: <strong>{frontmatter.adoption_status}</strong></p>
       </div>
       <slot />

@@ -4,7 +4,7 @@ import BlogPostFull from "../../components/BlogPostFull.astro";
 import Main from "../../components/Main.astro";
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.md");
+  const allPosts:any = await Astro.glob("../posts/*.md");
 
   return [
     { params: { tag: "astro" }, props: { posts: allPosts } },
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const filteredPosts = posts.filter((post) =>
+const filteredPosts = posts.filter((post:any) =>
   post.frontmatter.tags?.includes(tag)
 );
 ---
@@ -28,7 +28,7 @@ const filteredPosts = posts.filter((post) =>
     <p class="text-4xl">Posts tagged with {tag}</p>
     <ul>
       {
-        filteredPosts.map((post) => (
+        filteredPosts.map((post:any) => (
          <p> <BlogPostFull url={post.url} title={post.frontmatter.title} /></p>
         ))
       }
