@@ -1,18 +1,20 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Main from '../components/Main.astro';
-const { frontmatter} = Astro.props;
+const { frontmatter } = Astro.props;
+const pageTitle = frontmatter.title;
 ---
-<BaseLayout pageTitle='Fomas'>
+<BaseLayout pageTitle={ pageTitle }>
   <Main>
-  <div class="text-center mx-auto">
-    <h1 class="text-3xl mt-8">{frontmatter.title}</h1>
-    <p class="text-sm">{frontmatter.pubDate.slice(0,10)}</p>
-    <p class="text-md">{frontmatter.description}</p>
-    <p class="text-sm mb-4">Written by: {frontmatter.author}</p>
-    <!-- Apply mx-auto to center the image horizontally -->
-    <img class="mx-auto w-[1024px] rounded-3xl mb-8" src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-    <slot  />
-  </div>
-</Main>
+    <article class="max-w-4xl mx-auto p-5">
+      <h1 class="text-4xl font-bold text-center">{frontmatter.title}</h1>
+      <p class="text-center text-sm mt-2">{frontmatter.pubDate.slice(0, 10)}</p>
+      <p class="text-md mt-4 mb-2 text-center">{frontmatter.description}</p>
+      <p class="text-sm text-center mb-4">Written by: {frontmatter.author}</p>
+      <img class="mx-auto w-full max-w-xl rounded-3xl my-8" src={frontmatter.image.url} alt={frontmatter.image.alt} />
+      <div class="prose prose-xl lg:prose-2xl mx-auto prose-headings:text-blue-900 prose-p:text-blue-950">
+        <slot />
+      </div>
+    </article>
+  </Main>
 </BaseLayout>

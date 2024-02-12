@@ -1,9 +1,25 @@
-import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
-
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
+import mdx from "@astrojs/mdx";
+import m2dx from "astro-m2dx";
 import react from "@astrojs/react";
 
-// https://astro.build/config
+/** @type {import('astro-m2dx').Options} */
+const m2dxOptions = {
+  autoImports: true,
+  styleDirectives: true,
+};
+
 export default defineConfig({
-  integrations: [tailwind(), react()]
+  integrations: [
+    mdx({
+      // If you have specific MDX options, they would go here
+    }),
+    tailwind(),
+    react(),
+  ],
+  markdown: {
+    remarkPlugins: [[m2dx, m2dxOptions]],
+    extendDefaultPlugins: true,
+  },
 });

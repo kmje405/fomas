@@ -5,10 +5,10 @@ const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
   <Main>
-    <div class="text-center mx-auto max-w-4xl">
-      <h1 class="text-4xl font-bold mt-8">{frontmatter.title}</h1>
-      <img class="mx-auto w-full max-w-md rounded-xl my-8" src={frontmatter.image_url} alt={`Photo of ${frontmatter.title}`} />
-      <div class="text-lg">
+    <article class="prose prose-xl lg:prose-2xl prose-indigo text-center mx-auto max-w-4xl">
+      <h1>{frontmatter.title}</h1>
+      <img src={frontmatter.image_url} alt={`Photo of ${frontmatter.title}`} class="mx-auto w-full max-w-md rounded-xl my-8" />
+      <div>
         <p><strong>Breed:</strong> {frontmatter.breed}</p>
         <p><strong>Age:</strong> {frontmatter.age}</p>
         <p><strong>Gender:</strong> {frontmatter.gender}</p>
@@ -18,10 +18,12 @@ const { frontmatter } = Astro.props;
         <p><strong>Special Needs:</strong> {frontmatter.special_needs ? 'Yes' : 'No'}</p>
         <p><strong>Friendly With:</strong> {frontmatter.friendly_with.join(', ')}</p>
         <p><strong>Not Friendly With:</strong> {frontmatter.not_friendly_with.join(', ')}</p>
-        <p class="my-4 mx-auto italic">"{frontmatter.bio}"</p>
-        <p class="text-sm mb-4">Adoption Status: <strong>{frontmatter.adoption_status}</strong></p>
+        <blockquote class="text-left">"{frontmatter.bio}"</blockquote>
+        <p class="text-sm">Adoption Status: <strong>{frontmatter.adoption_status}</strong></p>
       </div>
+      <div class="text-left">
       <slot />
-    </div>
+      </div>
+    </article>
   </Main>
 </BaseLayout>

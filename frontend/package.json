@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/markdown-remark": "^4.2.1",
+    "@astrojs/mdx": "^2.1.1",
     "@astrojs/react": "^3.0.9",
     "@astrojs/tailwind": "^5.1.0",
     "@emotion/react": "^11.11.3",
@@ -20,11 +22,17 @@
     "@types/react": "^18.2.54",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.3.2",
+    "astro-m2dx": "^0.7.16",
     "install": "^0.13.0",
     "npm": "^10.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10"
   }
 }
