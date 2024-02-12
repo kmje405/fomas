@@ -3,10 +3,17 @@ import Layout from "../layouts/BaseLayout.astro"
 import Main from "../components/Main.astro"
 import BlogCard from "../components/BlogCard.astro"
 import SucessStoryCard from "../components/SucessStoryCard.astro"
+import FullPageBanner from "../components/FullPageBanner.astro"
+const { backgroundImage, headline, buttonText, buttonLink } = Astro.props;
+
 ---
 
 <Layout pageTitle="FOMAS | Home">
-    <Main>
-        <SucessStoryCard/>
-    </Main>
+        <FullPageBanner
+            backgroundImage="./doggy.jpeg"
+            headline="Get Involved"
+            buttonText="Learn More"      
+            buttonLink="/get-involved"  
+        >
+        </FullPageBanner>
 </Layout>

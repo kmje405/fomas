@@ -1,0 +1,17 @@
+---
+// Destructure props directly from Astro.props
+const { backgroundImage, headline, buttonText, buttonLink } = Astro.props;
+---
+
+<div 
+  class="relative min-h-[350px] w-full rounded-md bg-cover bg-center flex flex-col justify-end items-start text-left text-white p-8" 
+  style={`background-image: url('${backgroundImage}');`}
+>
+  <h1 class="text-4xl font-bold">{headline}</h1>
+  <a 
+    href={buttonLink} 
+    class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+  >
+    {buttonText}
+  </a>
+</div>
