@@ -2,7 +2,7 @@
 import Main from "../components/Main.astro";
 import Layout from "../layouts/BaseLayout.astro";
 // Fetch all posts
-const allPosts = await Astro.glob('../pages/posts/*.md');
+const allPosts = await Astro.glob("../pages/posts/*.md");
 const posts = allPosts.map((post) => {
   const { title, pubDate, author, description, image } = post.frontmatter;
   return {
@@ -22,22 +22,26 @@ import BlogCard from "../components/BlogCard.astro";
   <Main>
     <div class="min-h-screen py-10">
       <div class="max-w-6xl mx-auto px-4">
-        <h1 class="text-4xl font-bold text-center text-blue-950 my-8">{pageTitle}</h1>
+        <h1 class="text-4xl font-bold text-center text-blue-950 my-8">
+          {pageTitle}
+        </h1>
         <div class="prose prose-lg mx-auto text-blue-900 mb-8">
           <p>This is where I will post about my journey learning Astro.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <BlogCard
-              key={post.url}
-              url={post.url}
-              title={post.title}
-              pubDate={post.pubDate}
-              author={post.author}
-              description={post.description}
-              image={post.image}
-            />
-          ))}
+          {
+            posts.map((post) => (
+              <BlogCard
+                key={post.url}
+                url={post.url}
+                title={post.title}
+                pubDate={post.pubDate}
+                author={post.author}
+                description={post.description}
+                image={post.image}
+              />
+            ))
+          }
         </div>
       </div>
     </div>

@@ -1,27 +1,53 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Main from '../components/Main.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Main from "../components/Main.astro";
 const { frontmatter } = Astro.props;
 ---
+
 <BaseLayout pageTitle={frontmatter.title}>
   <Main>
-    <article class="prose prose-xl lg:prose-2xl prose-indigo text-center mx-auto max-w-4xl">
+    <article
+      class="prose prose-xl lg:prose-2xl prose-indigo text-center mx-auto max-w-4xl"
+    >
       <h1>{frontmatter.title}</h1>
-      <img src={frontmatter.image_url} alt={`Photo of ${frontmatter.title}`} class="mx-auto w-full max-w-md rounded-xl my-8" />
+      <img
+        src={frontmatter.image_url}
+        alt={`Photo of ${frontmatter.title}`}
+        class="mx-auto w-full max-w-md rounded-xl my-8"
+      />
       <div>
         <p><strong>Breed:</strong> {frontmatter.breed}</p>
         <p><strong>Age:</strong> {frontmatter.age}</p>
         <p><strong>Gender:</strong> {frontmatter.gender}</p>
         <p><strong>Size:</strong> {frontmatter.size}</p>
-        <p><strong>Vaccinated:</strong> {frontmatter.vaccinated ? 'Yes' : 'No'}</p>
-        <p><strong>Spayed/Neutered:</strong> {frontmatter.spayed_neutered ? 'Yes' : 'No'}</p>
-        <p><strong>Special Needs:</strong> {frontmatter.special_needs ? 'Yes' : 'No'}</p>
-        <p><strong>Friendly With:</strong> {frontmatter.friendly_with.join(', ')}</p>
-        <p><strong>Not Friendly With:</strong> {frontmatter.not_friendly_with.join(', ')}</p>
+        <p>
+          <strong>Vaccinated:</strong>
+          {frontmatter.vaccinated ? "Yes" : "No"}
+        </p>
+        <p>
+          <strong>Spayed/Neutered:</strong>
+          {frontmatter.spayed_neutered ? "Yes" : "No"}
+        </p>
+        <p>
+          <strong>Special Needs:</strong>
+          {frontmatter.special_needs ? "Yes" : "No"}
+        </p>
+        <p>
+          <strong>Friendly With:</strong>
+          {frontmatter.friendly_with.join(", ")}
+        </p>
+        <p>
+          <strong>Not Friendly With:</strong>
+          {frontmatter.not_friendly_with.join(", ")}
+        </p>
         <blockquote class="text-left">"{frontmatter.bio}"</blockquote>
-        <p class="text-sm">Adoption Status: <strong>{frontmatter.adoption_status}</strong></p>
+        <p class="text-sm">
+          Adoption Status: <strong>{frontmatter.adoption_status}</strong>
+        </p>
       </div>
-      <div class=" text-left prose prose-xl lg:prose-2xl mx-auto prose-headings:text-blue-900 prose-p:text-blue-950">
+      <div
+        class="text-left prose prose-xl lg:prose-2xl mx-auto prose-headings:text-blue-900 prose-p:text-blue-950"
+      >
         <slot />
       </div>
     </article>
