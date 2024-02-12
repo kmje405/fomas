@@ -6,7 +6,7 @@ const pageTitle = frontmatter.title;
 ---
 <BaseLayout pageTitle={ pageTitle }>
   <Main>
-    <article class="max-w-4xl mx-auto p-5">
+    <article class="max-w-4xl p-5 prose prose-xl lg:prose-2xl mx-auto prose-headings:text-blue-900 prose-p:text-blue-950">
       <h1 class="text-4xl font-bold text-center">{frontmatter.title}</h1>
       <p class="text-center text-sm mt-2">{frontmatter.pubDate.slice(0, 10)}</p>
       <p class="text-md mt-4 mb-2 text-center">{frontmatter.description}</p>

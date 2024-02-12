@@ -21,8 +21,8 @@ const { frontmatter } = Astro.props;
         <blockquote class="text-left">"{frontmatter.bio}"</blockquote>
         <p class="text-sm">Adoption Status: <strong>{frontmatter.adoption_status}</strong></p>
       </div>
-      <div class="text-left">
-      <slot />
+      <div class=" text-left prose prose-xl lg:prose-2xl mx-auto prose-headings:text-blue-900 prose-p:text-blue-950">
+        <slot />
       </div>
     </article>
   </Main>
