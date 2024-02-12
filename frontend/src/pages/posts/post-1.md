@@ -5,7 +5,7 @@ pubDate: 2020-10-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
 image:
-    url: './doggy.jpeg'
+    url: '/doggy.jpeg'
     alt: 'A sweet puppy.'
 tags: ["astro", "blogging", "learning in public"]
 ---
