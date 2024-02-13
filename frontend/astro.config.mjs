@@ -3,23 +3,28 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import m2dx from "astro-m2dx";
 import react from "@astrojs/react";
+import sanity from "@sanity/astro";
 
 /** @type {import('astro-m2dx').Options} */
 const m2dxOptions = {
   autoImports: true,
-  styleDirectives: true,
+  styleDirectives: true
 };
 
+// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    mdx({
-      // If you have specific MDX options, they would go here
-    }),
-    tailwind(),
-    react(),
-  ],
+  integrations: [mdx({
+    // If you have specific MDX options, they would go here
+  }), tailwind(), react(), sanity(
+    {
+      projectId: "1bs3a1kl",
+      dataset: "production",
+      useCdn: false,
+    }
+  )],
+
   markdown: {
     remarkPlugins: [[m2dx, m2dxOptions]],
-    extendDefaultPlugins: true,
-  },
+    extendDefaultPlugins: true
+  }
 });
