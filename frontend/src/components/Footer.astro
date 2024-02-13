@@ -5,18 +5,29 @@ const currentYear = function getCurrentYear(): number {
 };
 ---
 
-<footer class="bg-blue-900 text-center pt-20 mt-20 pb-6 px-5 sm:pb-3 sm:pt-8">
-  <div class='-z-10 bg-pawPadSingle invert bg-no-repeat opacity-30 mx-auto p-5'>
-    <div class="opacity-100!">
-    <p class="text-white! text-lg mb-2">
-      {mailingAddress}
-    </p>
-    <p class="text-white! text-xl font-bold mb-2">
-      &copy; {organizationFullName}
-    </p>
-    <p class="text-white! text-md italic">
-      {nonProfitStatus}
-    </p>
-  </div>
+<footer class="bg-blue-900 text-white pt-20 mt-20 pb-6 px-5 sm:pb-3 sm:pt-8">
+  <div class="max-w-7xl mx-auto flex flex-wrap items-start justify-between">
+    <!-- Beginning Section -->
+    <div class="w-full sm:w-auto mb-6 sm:mb-0">
+      <p class="text-lg mb-2">
+        {mailingAddress}
+      </p>
+      <p class="text-xl font-bold mb-2">
+        &copy; {organizationFullName}
+      </p>
+      <p class="text-md italic">
+        {nonProfitStatus}
+      </p>
+    </div>
+    <!-- Links Section -->
+    <div class="hidden sm:flex flex-wrap justify-end sm:justify-start w-full sm:w-auto text-xl font-bold">
+      <a href="/about" class="hover:text-blue-300 mx-2">About</a>
+      <a href="/blog" class="hover:text-blue-300 mx-2">Blog</a>
+      <a href="/dogs" class="hover:text-blue-300 mx-2">Dogs</a>
+      <a href="/get-involved" class="hover:text-blue-300 mx-2">Get Involved</a>
+      <a href="/resources" class="hover:text-blue-300 mx-2">Resources</a>
+      <a href="/donate" class="hover:text-blue-300 mx-2">Donate</a>
+    </div>
   </div>
 </footer>
+
