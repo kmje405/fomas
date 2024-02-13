@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import m2dx from "astro-m2dx";
 import react from "@astrojs/react";
-import sanity from "@sanity/astro";
+import { sanityIntegration } from "@sanity/astro";
 
 /** @type {import('astro-m2dx').Options} */
 const m2dxOptions = {
@@ -15,7 +15,7 @@ const m2dxOptions = {
 export default defineConfig({
   integrations: [mdx({
     // If you have specific MDX options, they would go here
-  }), tailwind(), react(), sanity(
+  }), tailwind(), react(), sanityIntegration(
     {
       projectId: "1bs3a1kl",
       dataset: "production",

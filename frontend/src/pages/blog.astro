@@ -1,8 +1,14 @@
 ---
+import { sanityClient } from "sanity:client";
+
 import Main from "../components/Main.astro";
 import Layout from "../layouts/BaseLayout.astro";
+
+const posts = await sanityClient.fetch(`*[_type == "post" && defined(slug)] | order(publishedAt desc)`);
+
+
 // Fetch all posts
-const allPosts = await Astro.glob("../pages/posts/*.md");
+/* const allPosts = await Astro.glob("../pages/posts/*.md");
 const posts = allPosts.map((post) => {
   const { title, pubDate, author, description, image } = post.frontmatter;
   return {
@@ -13,7 +19,7 @@ const posts = allPosts.map((post) => {
     description,
     image,
   };
-});
+}); */
 const pageTitle = "Welcome to the FOMAS Blog!";
 import BlogCard from "../components/BlogCard.astro";
 ---
@@ -25,24 +31,15 @@ import BlogCard from "../components/BlogCard.astro";
         <h1 class="text-4xl font-bold text-center text-blue-950 my-8">
           {pageTitle}
         </h1>
-        <div class="prose prose-lg mx-auto text-blue-900 mb-8">
-          <p>This is where I will post about my journey learning Astro.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {
-            posts.map((post) => (
-              <BlogCard
-                key={post.url}
-                url={post.url}
-                title={post.title}
-                pubDate={post.pubDate}
-                author={post.author}
-                description={post.description}
-                image={post.image}
-              />
-            ))
-          }
-        </div>
+        <ul>
+          {posts.map((post:any) => (
+            <li>
+              <a href={"/posts/" + post.slug.current} class="post-link">
+                {post.title}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   </Main>
