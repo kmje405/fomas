@@ -4,24 +4,13 @@ import { sanityClient } from "sanity:client";
 import Main from "../components/Main.astro";
 import Layout from "../layouts/BaseLayout.astro";
 
-const posts = await sanityClient.fetch(`*[_type == "post" && defined(slug)] | order(publishedAt desc)`);
+const posts = await sanityClient.fetch(
+  `*[_type == "post" && defined(slug)] | order(publishedAt desc)`,
+); 
 
+console.log(posts);
+const pageTitle = "Posts";
 
-// Fetch all posts
-/* const allPosts = await Astro.glob("../pages/posts/*.md");
-const posts = allPosts.map((post) => {
-  const { title, pubDate, author, description, image } = post.frontmatter;
-  return {
-    url: post.url,
-    title,
-    pubDate,
-    author,
-    description,
-    image,
-  };
-}); */
-const pageTitle = "Welcome to the FOMAS Blog!";
-import BlogCard from "../components/BlogCard.astro";
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -32,13 +21,15 @@ import BlogCard from "../components/BlogCard.astro";
           {pageTitle}
         </h1>
         <ul>
-          {posts.map((post:any) => (
-            <li>
-              <a href={"/posts/" + post.slug.current} class="post-link">
-                {post.title}
-              </a>
-            </li>
-          ))}
+          {
+            posts.map((post: any) => (
+              <li>
+                <a href={`blog/posts/${post.slug.current}`} class="post-link">
+                  {post.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
