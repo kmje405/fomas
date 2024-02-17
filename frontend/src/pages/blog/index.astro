@@ -1,14 +1,13 @@
 ---
 import { sanityClient } from "sanity:client";
 
-import Main from "../components/Main.astro";
-import Layout from "../layouts/BaseLayout.astro";
+import Main from "../../components/Main.astro";
+import Layout from "../../layouts/BaseLayout.astro";
 
 const posts = await sanityClient.fetch(
   `*[_type == "post" && defined(slug)] | order(publishedAt desc)`,
 ); 
 
-console.log(posts);
 const pageTitle = "Posts";
 
 ---
@@ -24,7 +23,7 @@ const pageTitle = "Posts";
           {
             posts.map((post: any) => (
               <li>
-                <a href={`blog/posts/${post.slug.current}`} class="post-link">
+                <a href={`/blog/posts/${post.slug.current}`} class="post-link">
                   {post.title}
                 </a>
               </li>
