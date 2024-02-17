@@ -1,0 +1,36 @@
+---
+// Import the necessary libraries and configurations
+import Layout from "../../../layouts/BaseLayout.astro";
+import { getPosts, getPost } from "../../../utils/sanity";
+import { urlFor } from "../../../utils/image";
+import PortableText from "../../../components/SanityStuff/PortableText.astro";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    params: { slug: post.slug.current },
+  }));
+}
+
+const { slug } = Astro.params;
+
+const post = await getPost(slug);
+---
+
+<Layout pageTitle={post.title}>
+  <article>
+    <h1>{post.title}</h1>
+    {
+      post.mainImage && (
+        <img
+          class="post__cover"
+          src={urlFor(post.mainImage).width(1000).url()}
+          alt="Cover image"
+        />
+      )
+    }
+    <div>
+      <PortableText value={post.body} />
+    </div>
+  </article>
+</Layout>
