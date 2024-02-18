@@ -1,40 +1,27 @@
 ---
-// Import your configured Sanity client
-import Main from '../../components/Main.astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortableText from '../../components/PortableText.astro';
-import  {useSanityClient}  from '@sanity/client';
+// Import the necessary libraries and configurations
+import { sanityClient } from "sanity:client";
+import Layout from "../../layouts/BaseLayout.astro";
+import { PortableText } from "astro-portabletext";
 
-// Define the getStaticPaths function
-export async function getStaticPaths() {
-  // Fetch all post slugs from Sanity
-  const paths = await useSanityClient.fetch(
-    `*[_type == "post" && defined(slug.current)]{
-      "params": {
-        "slug": slug.current
-      }
-    }`
+export const getStaticPaths = async () => {
+  const paths = await sanityClient.fetch(
+    `*[_type == "post" && defined(slug.current)]{ "params": { "slug": slug.current } }`
   );
+  return paths.map((post) => ({
+    params: { slug: post.params.slug },
+    props: { post },
+  }));
+};
 
-  // Return the paths array for Astro to generate static pages
-  return {
-    paths,
-    fallback: false, // Set to true if you want to serve a generic fallback for missing paths
-  };
-}
-
-// Now, fetch the specific post data for rendering
-const { slug } = Astro.params;
-const query = `*[_type == "post" && slug.current == $slug][0]`;
-const post = await useSanityClient.fetch(query, { slug });
+const { post } = Astro.props;
 ---
 
-<BaseLayout pageTitle={post.title}>
-  <Main>
-    <article>
-      <h1>{post.title}</h1>
-      <!-- Your PortableText component to render the post's body -->
-      <PortableText content={post.body} />
-    </article>
-  </Main>
-</BaseLayout>
+<Layout pageTitle={post.title}>
+  <article>
+    <PortableText value={post.title}>
+    <div>
+      <PortableText value={post.body} />
+    </div>
+  </article>
+</Layout>
