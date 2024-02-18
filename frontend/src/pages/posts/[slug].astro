@@ -1,48 +1,40 @@
 ---
-// Import the necessary libraries and configurations
-import { sanityClient } from "sanity:client";
-import Layout from "../../layouts/BaseLayout.astro";
-import PortableText from "../../components/PortableText";
-import Main from "../../components/Main.astro";
-import  PortableTextBlock  from "@portabletext/types";
-import PortableTextImage from "../../components/PortableTextImage.astro";
-import type { Image } from "sanity";
+// Import your configured Sanity client
+import Main from '../../components/Main.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortableText from '../../components/PortableText.astro';
+import  {useSanityClient}  from '@sanity/client';
 
-export interface Post {
-  _type: "post";
-  _createdAt: string;
-  title?: string;
-  slug: string;
-  excerpt?: string;
-  mainImage?: Image;
-  body: [];
+// Define the getStaticPaths function
+export async function getStaticPaths() {
+  // Fetch all post slugs from Sanity
+  const paths = await useSanityClient.fetch(
+    `*[_type == "post" && defined(slug.current)]{
+      "params": {
+        "slug": slug.current
+      }
+    }`
+  );
+
+  // Return the paths array for Astro to generate static pages
+  return {
+    paths,
+    fallback: false, // Set to true if you want to serve a generic fallback for missing paths
+  };
 }
 
-
-export const getStaticPaths = async () => {
-  const paths = await sanityClient.fetch(
-    `*[_type == "post" && defined(slug.current)]{ "params": { "slug": slug.current } }`
-  );
-  return paths.map((post) => ({
-    params: { slug: post.params.slug },
-    props: { post },
-  }));
-};
-
-const { post } = Astro.props;
-
-
+// Now, fetch the specific post data for rendering
+const { slug } = Astro.params;
+const query = `*[_type == "post" && slug.current == $slug][0]`;
+const post = await useSanityClient.fetch(query, { slug });
 ---
 
-<Layout pageTitle={post.title}>
+<BaseLayout pageTitle={post.title}>
   <Main>
     <article>
       <h1>{post.title}</h1>
-      <div>
-        {/* Render the post body using PortableText or a similar component */}
-        <PortableText content={post.body} />
-      </div>
+      <!-- Your PortableText component to render the post's body -->
+      <PortableText content={post.body} />
     </article>
   </Main>
-</Layout>
-
+</BaseLayout>
