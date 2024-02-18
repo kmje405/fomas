@@ -2,29 +2,47 @@
 // Import the necessary libraries and configurations
 import { sanityClient } from "sanity:client";
 import Layout from "../../layouts/BaseLayout.astro";
+import PortableText from "../../components/PortableText";
+import Main from "../../components/Main.astro";
+import  PortableTextBlock  from "@portabletext/types";
+import PortableTextImage from "../../components/PortableTextImage.astro";
+import type { Image } from "sanity";
 
-const params = Astro.params;
-const slug = params.slug;
-
-// Fetching the post data based on the slug provided by the static path
-const posts = await sanityClient.fetch(
-  `*[_type == "post" && slug.current == $slug][0]`, { slug }
-);
-
-
-if (!post) {
-  throw new Error('Post not found');
+export interface Post {
+  _type: "post";
+  _createdAt: string;
+  title?: string;
+  slug: string;
+  excerpt?: string;
+  mainImage?: Image;
+  body: [];
 }
 
-const pageTitle = post.title;
+
+export const getStaticPaths = async () => {
+  const paths = await sanityClient.fetch(
+    `*[_type == "post" && defined(slug.current)]{ "params": { "slug": slug.current } }`
+  );
+  return paths.map((post) => ({
+    params: { slug: post.params.slug },
+    props: { post },
+  }));
+};
+
+const { post } = Astro.props;
+
+
 ---
 
-<Layout pageTitle={pageTitle}>
-  <article>
-    <h1>{post.title}</h1>
-    <div>
-      {post.body}
-      // Handle rendering of your post content here, taking into account rich text or block content as necessary.
-    </div>
-  </article>
+<Layout pageTitle={post.title}>
+  <Main>
+    <article>
+      <h1>{post.title}</h1>
+      <div>
+        {/* Render the post body using PortableText or a similar component */}
+        <PortableText content={post.body} />
+      </div>
+    </article>
+  </Main>
 </Layout>
+
