@@ -1,10 +1,10 @@
 ---
-import { sanityClient } from "../sanity/sanity"
+import { client } from "../libs/sanity/index"
 
 import Main from "../components/Main.astro";
 import Layout from "../layouts/BaseLayout.astro";
 
-const posts = await sanityClient.fetch(
+const posts = await client.fetch(
   `*[_type == "post" && defined(slug)] | order(publishedAt desc)`,
 ); 
 
@@ -35,3 +35,4 @@ const pageTitle = "Posts";
     </div>
   </Main>
 </Layout>
+../libs/sanity/sanity

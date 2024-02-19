@@ -2,10 +2,16 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import { sanityIntegration } from "@sanity/astro";
+import netlify from '@astrojs/netlify';
+
+
 
 // https://astro.build/config
 export default defineConfig({
   output: "hybrid",
+  adapters: [
+    netlify(),
+  ],
   integrations: [
     tailwind(),
     react(),

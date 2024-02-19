@@ -1,26 +1,34 @@
 ---
 // Import the necessary libraries and configurations
-import { sanityClient } from "../../sanity/sanity";
 import Layout from "../../layouts/BaseLayout.astro";
-import { PortableText } from "astro-portabletext";
-
-export const getStaticPaths = async () => {
-  const paths = await sanityClient.fetch(
-    `*[_type == "post" && defined(slug.current)]{ "params": { "slug": slug.current } }`
-  );
-  return paths.map((post) => ({
-    params: { slug: post.params.slug },
-    props: { post },
+import { getPosts, getPost } from "../../../src/utils/sanity";
+import { urlFor } from "../../libs/sanity/image";
+import PortableText from "../../components/PortableText.astro";
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post:any) => ({
+    params: { slug: post.slug.current },
   }));
-};
-
-const { post } = Astro.props;
+}
+const { slug } = Astro.params;
+const post = await getPost(slug);
 ---
 
 <Layout pageTitle={post.title}>
   <article>
+    <h1>{post.title}</h1>
+    {
+      post.mainImage && (
+        <img
+          class="post__cover"
+          src={urlFor(post.mainImage).width(1000).url()}
+          alt="Cover image"
+        />
+      )
+    }
     <div>
       <PortableText value={post.body} />
     </div>
   </article>
 </Layout>
+../../utils/sanity../../utils/image
