@@ -1,6 +1,6 @@
 ---
-// Import the necessary libraries and configurations
-import Layout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Main from "../../components/Main.astro";
 import { getPosts, getPost } from "../../../src/utils/sanity";
 import { urlFor } from "../../libs/sanity/image";
 import PortableText from "../../components/PortableText.astro";
@@ -14,7 +14,8 @@ const { slug } = Astro.params;
 const post = await getPost(slug);
 ---
 
-<Layout pageTitle={post.title}>
+<BaseLayout pageTitle={post.title}>
+  <Main>
   <article>
     <h1>{post.title}</h1>
     {
@@ -30,4 +31,5 @@ const post = await getPost(slug);
       <PortableText value={post.body} />
     </div>
   </article>
-</Layout>
+</Main>
+</BaseLayout>

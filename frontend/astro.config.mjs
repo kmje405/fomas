@@ -5,21 +5,15 @@ import { sanityIntegration } from "@sanity/astro";
 import netlify from '@astrojs/netlify';
 
 
-
 // https://astro.build/config
 export default defineConfig({
   output: "hybrid",
-  adapters: [
-    netlify(),
-  ],
-  integrations: [
-    tailwind(),
-    react(),
-    sanityIntegration({
-      projectId: "1bs3a1kl",
-      dataset: "production",
-      useCdn: false,
-      studioBasePath: "/admin",
-    })
-  ],
+  adapters: [netlify()],
+  integrations: [tailwind(), react(), sanityIntegration({
+    projectId: "1bs3a1kl",
+    dataset: "production",
+    useCdn: false,
+    studioBasePath: "/admin"
+  })],
+  adapter: netlify()
 });
