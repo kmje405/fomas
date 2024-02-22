@@ -1,38 +1,43 @@
 ---
-import { client } from "../libs/sanity/index"
-
-import Main from "../components/Main.astro";
+// Import necessary components and utilities
+import { client } from "../libs/sanity/index";
 import Layout from "../layouts/BaseLayout.astro";
+import BlogCard from "../components/BlogCard.astro";
+import Main from "../components/Main.astro";
 
-const posts = await client.fetch(
-  `*[_type == "post" && defined(slug)] | order(publishedAt desc)`,
-); 
+// Fetch posts
+const query = `*[_type == "post" && defined(slug)] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  publishedAt,
+  mainImage,
+  body,
+  "author": author->name,
 
-console.log(posts);
+}`;
+
+const posts = await client.fetch(query);
 const pageTitle = "Posts";
-
 ---
-
 <Layout pageTitle={pageTitle}>
   <Main>
     <div class="min-h-screen py-10">
       <div class="max-w-6xl mx-auto px-4">
-        <h1 class="text-4xl font-bold text-center text-blue-950 my-8">
-          {pageTitle}
-        </h1>
-        <ul>
-          {
-            posts.map((post: any) => (
-              <li>
-                <a href={`/posts/${post.slug.current}`} class="post-link">
-                  {post.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
+        <h1 class="text-4xl font-bold text-center text-blue-950 my-8">{pageTitle}</h1>
+        <!-- 3-column grid layout with gap -->
+        <div class="grid grid-cols-3 gap-8">
+          <!-- Map through posts and render each BlogCard with w-full to ensure it expands -->
+          {posts.map((post:any) => (
+            <div class="min-w-[400px]"> <!-- Ensure this div takes up full width -->
+              <BlogCard post={post}>
+                </BlogCard>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </Main>
 </Layout>
-../libs/sanity/sanity
+
+

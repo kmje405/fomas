@@ -1,21 +1,17 @@
 ---
 import Layout from "../layouts/BaseLayout.astro"
 import Main from "../components/Main.astro"
-import BlogCard from "../components/BlogCard.astro"
-import SucessStoryCard from "../components/SucessStoryCard.astro"
 import FullPageBanner from "../components/FullPageBanner.astro"
-const { backgroundImage, headline, buttonText, buttonLink } = Astro.props;
+const pageTitle = "Get Involved"
 
 ---
 
-<Layout pageTitle="FOMAS | Home">
+<Layout pageTitle={pageTitle}>
         <FullPageBanner
-            
             backgroundImage="./doggy.jpeg"
             headline="Get Involved"
             buttonText="Learn More"      
-            buttonLink="/get-involved"  
-        >
+            buttonLink="/get-involved">
         </FullPageBanner>
         <Main>
             <h1>hello</h1>

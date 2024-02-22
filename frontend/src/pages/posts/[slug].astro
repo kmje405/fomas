@@ -3,33 +3,36 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Main from "../../components/Main.astro";
 import { getPosts, getPost } from "../../../src/utils/sanity";
 import { urlFor } from "../../libs/sanity/image";
-import PortableText from "../../components/PortableText.astro";
+import {PortableText} from "astro-portabletext";
+
 export async function getStaticPaths() {
   const posts = await getPosts();
-  return posts.map((post:any) => ({
+  return posts.map((post: any) => ({
     params: { slug: post.slug.current },
   }));
 }
+
 const { slug } = Astro.params;
+
 const post = await getPost(slug);
 ---
 
 <BaseLayout pageTitle={post.title}>
   <Main>
-  <article>
-    <h1>{post.title}</h1>
-    {
-      post.mainImage && (
-        <img
-          class="post__cover"
-          src={urlFor(post.mainImage).width(1000).url()}
-          alt="Cover image"
-        />
-      )
-    }
-    <div>
-      <PortableText value={post.body} />
-    </div>
-  </article>
-</Main>
+    <article class="mx-auto prose prose2xl">
+      <h1 class="mt-8">{post.title}</h1>
+      {
+        post.mainImage && (
+          <img
+            class="post__cover"
+            src={urlFor(post.mainImage).width(400).url()}
+            alt="Cover image"
+          />
+        )
+      }
+      <div class="">
+        <PortableText value={post.body} />
+      </div>
+    </article>
+  </Main>
 </BaseLayout>
