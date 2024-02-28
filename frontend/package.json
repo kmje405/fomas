@@ -1,5 +1,5 @@
 {
-  "name": "Friends of Mountainair Animal Shelter Website",
+  "name": "fomas-website",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -22,6 +22,7 @@
     "@mui/material": "^5.15.7",
     "@sanity/astro": "^2.2.0",
     "@sanity/client": "^6.12.4",
+    "@sanity/dashboard": "^3.1.6",
     "@sanity/image-url": "^1.0.2",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
@@ -36,6 +37,7 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "sanity": "^3.29.0",
+    "sanity-plugin-dashboard-widget-netlify": "^2.0.1",
     "sanity-plugin-netlify": "^1.1.2",
     "styled-components": "^6.1.8",
     "tailwindcss": "^3.4.1",
