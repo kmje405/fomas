@@ -1,5 +1,8 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
+import { netlifyTool } from 'sanity-plugin-netlify'
+import { netlify } from 'sanity-plugin-netlify'
+
 import {schemaTypes} from '../frontend/src/schemaTypes'
 
 export default defineConfig({
@@ -9,7 +12,7 @@ export default defineConfig({
   projectId: '1bs3a1kl',
   dataset: 'production',
 
-  plugins: [structureTool()],
+  plugins: [structureTool(), netlifyTool()],
 
   schema: {
     types: schemaTypes,
