@@ -6,11 +6,11 @@ const cardHeading = "Success Story";
 ---
 
 <!-- TODO: Figure out how to get the white card to extend beyond the y axis of the blue -->
-<div class="bg-teal-300 ]">
+<div class="flex mx-auto bg-teal-300 sm:max-w-fit">
   <div
     class="mt-10 card w-[90%] ] bg-white mx-auto  max-w-md rounded-3xl shadow-xl transition-all duration-300 ease-in-out hover:shadow-2xl"
   >
-    <a href="/dogs" class="block">
+    <a href="/dogs" class="flex-box">
       <div class="p-4">
         <p class="text-4xl font-bold px-4">
           {cardHeading}
@@ -22,7 +22,7 @@ const cardHeading = "Success Story";
           alt="Sophie"
         />
         <div class="px-4 py-2">
-          <p class="prose prose-sm max-w-none">{animalDescription}</p>
+          <p class=" prose prose-sm max-w-none">{animalDescription}</p>
         </div>
         <div class="flex items-center justify-center">
           <RightArrowButton path="/dogs" />
