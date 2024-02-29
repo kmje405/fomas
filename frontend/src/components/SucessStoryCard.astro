@@ -1,35 +1,34 @@
 ---
-const animalDescription =
-  "Every dog that comes through the doors of the Mountainair Animal Shelter receives more individualized attention than at other, larger shelters. We do not euthanize at our shelter.";
+import RightArrowButton from "./RightArrowButton.astro";
+const animalDescription = "Every dog that comes through the doors of the Mountainair Animal Shelter receives more individualized attention than at other, larger shelters. We do not euthanize at our shelter.";
 const cardTitle = "Meet Sophie!";
 const cardHeading = "Success Story";
 ---
 
-<div
-  class="card w-full bg-blue-200 outline outline-slate-300 max-w-md min-h-fit mt-8 rounded-3xl shadow-xl transition-all duration-300 ease-in-out hover:shadow-2xl"
->
-  <a href="/blog-post" class="block">
-    <div class="p-4">
-      <p class="text-4xl font-bold px-4">
-        {cardHeading}
-      </p>
-      <p class="text-2xl font-bold py-2 px-4">{cardTitle}</p>
-      <img
-        class="rounded-3xl max-h-60 w-full object-cover"
-        src="/doggy.jpeg"
-        alt="Sophie"
-      />
-      <div class="px-4 py-2">
-        <!-- Here, you might consider using prose for longer descriptions -->
-        <p class="prose prose-sm max-w-none">{animalDescription}</p>
+<!-- TODO: Figure out how to get the white card to extend beyond the y axis of the blue -->
+<div class="bg-teal-300 mt-10 px-[-4rem] py-[-4rem] md:max-w-[400px]">
+  <div
+    class="mt-10 card w-[90%] max-h-[calc(100%+20%)] bg-white mx-auto mt-[-10rem] mb-[-8rem] max-w-md rounded-3xl shadow-xl transition-all duration-300 ease-in-out hover:shadow-2xl"
+  >
+    <a href="/dogs" class="block">
+      <div class="p-4">
+        <p class="text-4xl font-bold px-4">
+          {cardHeading}
+        </p>
+        <p class="text-2xl font-bold py-2 px-4">{cardTitle}</p>
+        <img
+          class="rounded-3xl max-h-60 w-full object-cover"
+          src="/doggy.jpeg"
+          alt="Sophie"
+        />
+        <div class="px-4 py-2">
+          <p class="prose prose-sm max-w-none">{animalDescription}</p>
+        </div>
+        <div class="flex items-center justify-center">
+          <RightArrowButton path="/dogs" />
+        </div>
       </div>
-      <div class="flex justify-center p-4">
-        <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out"
-        >
-          Learn More!
-        </button>
-      </div>
-    </div>
-  </a>
+    </a>
+  </div>
 </div>
+
