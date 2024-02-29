@@ -2,6 +2,8 @@
 import Layout from "../layouts/BaseLayout.astro"
 import Main from "../components/Main.astro"
 import FullPageBanner from "../components/FullPageBanner.astro"
+import Onebyone from "../components/Onebyone.astro"
+import SucessStoryCard from "../components/SucessStoryCard.astro"
 const pageTitle = "Get Involved"
 
 ---
@@ -14,6 +16,19 @@ const pageTitle = "Get Involved"
             buttonLink="/get-involved">
         </FullPageBanner>
         <Main>
-            <h1>hello</h1>
+            <Onebyone 
+            title="Resources"
+            description="Find a new forever friend today."
+            image="/doggy.jpeg"
+            buttonLink="/resources"
+          />
+          <Onebyone
+          title="Volunteer"
+          description="Find a new forever friend today."
+          image="/doggy.jpeg"
+          buttonLink="/get-involved"
+          reverse={true}
+        />
+        <SucessStoryCard class="mt-5rem"/>
         </Main>
 </Layout>
