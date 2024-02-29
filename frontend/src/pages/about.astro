@@ -1,19 +1,23 @@
 ---
-import Main from '../components/Main.astro';
-import Layout from '../layouts/BaseLayout.astro';
-const pageTitle = 'FOMAS | About';
+import Main from "../components/Main.astro";
+import Layout from "../layouts/BaseLayout.astro";
+import Onebyone from "../components/Onebyone.astro";
+
+const pageTitle = "FOMAS | About";
+const reversed = true;
 ---
 
 <Layout pageTitle={pageTitle}>
-	<Main>
-        <body>
-            <h1>My Astro Site</h1>
-            <h1>About Me</h1>
-            <h2>... and my new Astro site!</h2>
-          
-            <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-          
-            <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-          </body>
-    </Main>
+  <Main>
+    <body> 
+      <Onebyone 
+        title="Resources"
+        description="Find a new forever friend today."
+        image="/doggy.jpeg"
+        buttonText="Resources"
+        buttonLink="/resources"
+        reverse={reversed}
+      />
+    </body>
+  </Main>
 </Layout>
