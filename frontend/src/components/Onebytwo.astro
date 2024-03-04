@@ -13,7 +13,7 @@ interface Props {
 const { title, description, image, buttonLink, reverse = false }: Props = Astro.props;
 ---
 
-<div class={`mt-2 mb-4 max-w-[1024px] mx-auto grid grid-cols-2 items-center gap-4 bg-white rounded-lg ${reverse ? 'flex-row-reverse' : ''}`}>
+<div class={`mt-2 mb-4 max-w-[1024px] p-8 grid grid-cols-2 items-center gap-4 bg-white rounded-lg ${reverse ? 'flex-row-reverse' : ''}`}>
   <!-- Content column, order changes if reverse is true -->
   <div class={`flex flex-col justify-between space-y-4 ${reverse ? 'order-last' : 'order-first'}`}>
     <div>
