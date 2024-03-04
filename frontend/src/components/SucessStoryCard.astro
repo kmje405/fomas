@@ -6,16 +6,16 @@ const cardHeading = "Success Story";
 ---
 
 <!-- TODO: Figure out how to get the white card to extend beyond the y axis of the blue -->
-<div class="flex mx-auto bg-teal-300 sm:max-w-fit rounded-2xl mt-20 ">
+<div class="flex mx-auto bg-teal-300 sm:max-w-fit rounded-2xl mt-20 border border-dashed border-blue-900 ">
   <div
-    class="my-[-2rem] card w-[90%] ] bg-white mx-auto  max-w-md rounded-3xl shadow-xl transition-all duration-300 ease-in-out hover:shadow-2xl border-solid border-4 border-teal-300"
+    class="my-[-2rem] card w-[90%] ] bg-white mx-auto  max-w-md rounded-3xl shadow-xl transition-all duration-300 ease-in-out hover:shadow-2xl border-solid border-2 border-teal-300"
   >
     <a href="/dogs" class="flex-box">
       <div class="p-4">
-        <p class="text-4xl font-bold px-4">
+        <p class="text-4xl font-bold px-4 text-blue-500">
           {cardHeading}
         </p>
-        <p class="text-2xl font-bold py-2 px-4">{cardTitle}</p>
+        <p class="text-2xl font-bold py-2 px-4 text-blue-500">{cardTitle}</p>
         <img
           class="rounded-3xl max-h-60 w-full object-cover"
           src="/doggy.jpeg"
