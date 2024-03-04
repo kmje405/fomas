@@ -4,8 +4,10 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "curly-div-teal-300": "url('/line-twTeal300.png')",
-        pawPadSingle: "url('/pawPad.svg')",
+        'curly-div-teal-300': "url('/line-twTeal300.png')",
+        'pawPadSingle': "url('/pawPad.svg')",
+        'missionBannerImage': "url('/skyBannerBackground.png')",
+
       },
     },
   },
