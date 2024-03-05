@@ -10,7 +10,7 @@ const { backgroundImage, headline, buttonText, buttonLink } = Astro.props;
   class="relative min-h-[500px] w-full bg-cover bg-center flex flex-col justify-end items-center text-left text-white p-8" 
   style={`background-image: url('${backgroundImage}');`}
 >
-  <h1 class="text-6xl shadow-inner font-bold">{headline}</h1>
+  <h1 class="text-6xl font-bold">{headline}</h1>
   <a 
     href={buttonLink} 
     class="mt-4 bg-blue-700  hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300"
