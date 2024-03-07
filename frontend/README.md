@@ -8,8 +8,7 @@ This project is a dynamic, responsive animal shelter website designed to facilit
 
 - **Adoptable Pets Gallery**: Interactive gallery showcasing animals available for adoption, with detailed profiles for each pet.
 - **Content Management**: Utilize Sanity CMS for easy updating of pet profiles, news, and events.
-- **Events Calendar**: Up-to-date information on upcoming shelter events and activities.
-- **Donation Integration**: Secure, user-friendly donation features to support the shelter financially.
+- **Donation Integration**: Secure, user-friendly donations processed via a Striped hosted payment form, easily implemented using payment link redirects since this site is hosted with no backend.
 - **Responsive Design**: Ensures a smooth user experience across all devices.
 
 ## Technologies Used
@@ -17,7 +16,7 @@ This project is a dynamic, responsive animal shelter website designed to facilit
 - **Frontend**: Astro.js
 - **Backend/CMS**: Sanity.io
 - **Styling**: Tailwind CSS
-- **Deployment**: [Netlify/Vercel]
+- **Deployment**: Netlify
 - **Other Tools**: [Any additional tools used]
 
 ## Project Structure 
@@ -28,8 +27,6 @@ This project is a dynamic, responsive animal shelter website designed to facilit
 |   |--layouts/
 |   |--pages/
 |   |--styles/
-|--sanity-studio/
-|   |--schemas/
 |--.env
 |--astro.config.mjs
 |--README.md
