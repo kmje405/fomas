@@ -1,39 +1,39 @@
 ---
-import Layout from "../layouts/BaseLayout.astro"
-import Main from "../components/Main.astro"
-import FullPageBanner from "../components/FullPageBanner.astro"
-import Onebyone from "../components/Onebytwo.astro"
-import SuccessStoryCard from "../components/SuccessStoryCard.astro"
+import Layout from "../layouts/BaseLayout.astro";
+import Main from "../components/Main.astro";
+import FullPageBanner from "../components/FullPageBanner.astro";
+import Onebyone from "../components/Onebytwo.astro";
+import SuccessStoryCard from "../components/SuccessStoryCard.astro";
 import WhyFomas from "../components/WhyFomas.astro";
 import MissionBanner from "../components/MissionBanner.astro";
-const pageTitle = "Get Involved"
-
-
+import LetsConnect from "../components/LetsConnect.astro";
+const pageTitle = "Get Involved";
 ---
 
 <Layout pageTitle={pageTitle}>
-        <FullPageBanner
-            backgroundImage="./doggy.jpeg"
-            headline="Get Involved"
-            buttonText="Learn More"      
-            buttonLink="/get-involved">
-        </FullPageBanner>
-        <Main>
-            <Onebyone 
-            title="Resources"
-            description="Find a new forever friend today."
-            image="/horizontalPawprint 3.png"
-            buttonLink="/resources"
-          />
-          <Onebyone
-          title="Volunteer"
-          description="Find a new forever friend today."
-          image="/horizontalPawprint 3.png"
-          buttonLink="/get-involved"
-          reverse={true}
-        />
-        <SuccessStoryCard class="mt-5rem"/>
-        <WhyFomas/>
-        <MissionBanner/>
-      </Main>
+  <FullPageBanner
+    backgroundImage="./doggy.jpeg"
+    headline="Get Involved"
+    buttonText="Learn More"
+    buttonLink="/get-involved"
+  />
+  <Main>
+    <Onebyone
+      title="Resources"
+      description="Find a new forever friend today."
+      image="/horizontalPawprint 3.png"
+      buttonLink="/resources"
+    />
+    <Onebyone
+      title="Volunteer"
+      description="Find a new forever friend today."
+      image="/horizontalPawprint 3.png"
+      buttonLink="/get-involved"
+      reverse={true}
+    />
+    <SuccessStoryCard class="mt-5rem" />
+    <WhyFomas />
+    <MissionBanner />
+    <LetsConnect />
+  </Main>
 </Layout>
