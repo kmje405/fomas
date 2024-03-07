@@ -25,10 +25,9 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body class="flex-col min-w-[375px] ">
+  <body class="flex-col min-w-[375px]">
     <Header />
-      <slot />
-    </div>
-    <Footer />
+    <slot />
   </body>
+  <Footer />
 </html>
