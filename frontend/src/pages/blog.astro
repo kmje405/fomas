@@ -18,7 +18,7 @@ const query = `*[_type == "post" && defined(slug)] | order(publishedAt desc) {
 }`;
 
 const posts = await client.fetch(query);
-const pageTitle = "Posts";
+const pageTitle = "Blog";
 ---
 <Layout pageTitle={pageTitle}>
   <Main>
