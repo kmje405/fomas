@@ -1,0 +1,26 @@
+---
+import Onebytwo from "../components/Onebytwo.astro";
+---
+
+<div class="container">
+    <h2 class="text-6xl p-2 text-center font-bold text-blue-600 leading-tight break-words ">Support Our Mission!</h2>
+    <Onebytwo
+        title="Donate"
+        description="Donate to support our mission."
+        image="./horizontalPawprint 3.png"
+        buttonLink="/donate"
+    />
+    <Onebytwo
+        title="Volunteer"
+        description="Volunteer to support our mission."
+        image="./horizontalPawprint 3.png"
+        buttonLink="/get-involved"
+        reverse={true}
+        />
+    <Onebytwo
+        title="Food Bank"
+        description="Give resources to support our mission."
+        image="./horizontalPawprint 3.png"
+        buttonLink="/get-involved"
+    />
+</div>
