@@ -1,5 +1,7 @@
 ---
 import RightArrowButton from './RightArrowButton.astro';
+// TODO: Rename to describe behavior rather than layout CTA Image / with text.
+// TODO: Consider using a variant instead of reverse (image left / image right)
 
 // Define the component's properties
 interface Props {
@@ -17,7 +19,7 @@ const { title, description, image, buttonLink, reverse = false }: Props = Astro.
   <!-- Content column, order changes if reverse is true -->
   <div class={`flex flex-col justify-between space-y-4 ${reverse ? 'order-last' : 'order-first'}`}>
     <div>
-      <h1 class="text-4xl text-blue-900 font-bold">{title}</h1>
+      <h2 class="text-4xl text-blue-900 font-bold">{title}</h2>
       <p class="text-gray-600">{description}</p>
     </div>
     <RightArrowButton path={buttonLink} />
