@@ -35,6 +35,9 @@ dependencies:
   '@mui/material':
     specifier: ^5.15.7
     version: 5.15.7(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
+  '@netlify/functions':
+    specifier: ^2.6.0
+    version: 2.6.0
   '@sanity/astro':
     specifier: ^2.2.0
     version: 2.2.0(@sanity/client@6.12.4)(astro@4.3.2)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.29.0)(styled-components@6.1.8)
@@ -47,6 +50,12 @@ dependencies:
   '@sanity/image-url':
     specifier: ^1.0.2
     version: 1.0.2
+  '@stripe/react-stripe-js':
+    specifier: ^2.6.2
+    version: 2.6.2(@stripe/stripe-js@3.0.10)(react-dom@18.2.0)(react@18.2.0)
+  '@stripe/stripe-js':
+    specifier: ^3.0.10
+    version: 3.0.10
   '@types/react':
     specifier: ^18.2.55
     version: 18.2.55
@@ -2039,6 +2048,24 @@ packages:
     dependencies:
       '@types/uuid': 8.3.4
       uuid: 8.3.2
+    dev: false
+
+  /@stripe/react-stripe-js@2.6.2(@stripe/stripe-js@3.0.10)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-FSjNg4v7BiCfojvx25PQ8DugOa09cGk1t816R/DLI/lT+1bgRAYpMvoPirLT4ZQ3ev/0VDtPdWNaabPsLDTOMA==}
+    peerDependencies:
+      '@stripe/stripe-js': ^1.44.1 || ^2.0.0 || ^3.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@stripe/stripe-js': 3.0.10
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@stripe/stripe-js@3.0.10:
+    resolution: {integrity: sha512-CFRNha+aPXR8GrqJss2TbK1j4aSGZXQY8gx0hvaYiSp+dU7EK/Zs5uwFTSAgV+t8H4+jcZ/iBGajAvoMYOwy+A==}
+    engines: {node: '>=12.16'}
     dev: false
 
   /@tailwindcss/typography@0.5.10(tailwindcss@3.4.1):
