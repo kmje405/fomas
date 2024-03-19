@@ -1,6 +1,6 @@
 [build]
   # command = "# no build command" # Uncomment if there's no build command necessary
-  functions = "netlify/functions"
+  functions = "netlify/functions" #TODO Ask Spencer if this is correct.
   publish = "dist" # Change "dist" to your actual publish directory, or "." if the root contains your site's content
 
 [[redirects]]

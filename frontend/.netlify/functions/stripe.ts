@@ -50,8 +50,8 @@ const handler: Handler = async (event, context) => {
       },
     ],
     mode: 'payment',
-    success_url: 'https://your-success-url.com',
-    cancel_url: 'https://your-cancel-url.com',
+    success_url: 'https://fomas.netlify.app/payment-success',
+    cancel_url: 'https://fomas.netlify.app/payment-failure',
   });
 
   return {
