@@ -1,0 +1,9 @@
+[build]
+  # command = "# no build command" # Uncomment if there's no build command necessary
+  functions = "netlify/functions"
+  publish = "dist" # Change "dist" to your actual publish directory, or "." if the root contains your site's content
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
