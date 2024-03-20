@@ -1,12 +1,43 @@
 ---
 import Main from "../components/Main.astro";
 import Layout from "../layouts/BaseLayout.astro";
+import MissionBanner from "../components/MissionBanner.astro";
+import Onebytwo from "../components/Onebytwo.astro";
+import FullPageBanner from "../components/FullPageBanner.astro";
+import LetsConnect from "../components/LetsConnect.astro";
+import PlaceholderBlock from "../components/PlaceholderBlock.astro";
 const pageTitle = "Donate";
 ---
-<!-- 
+
 <Layout pageTitle={pageTitle}>
     <Main>
-        <DonationForm />
+        <MissionBanner
+            title="Thank you!"
+            content="Your donation helps FOMAS put dogs in the most loving homes and provide them with care."
+        />
+        <!-- TODO: Embed Stripe Payment Element -->
+        <PlaceholderBlock text="Placeholder: Stripe Payment Element" />
+        <h2 class="text-6xl text-blue-600 font-bold text-center">
+            Other Ways To Give
+        </h2>
+        <Onebytwo
+            title="Volunteer"
+            image="/horizontalPawprint 3.png"
+            buttonLink="/get-involved"
+            reverse={true}
+        />
+        <Onebytwo
+            title="Give Food & Supplies"
+            image="/horizontalPawprint 3.png"
+            buttonLink="/get-involved"
+            reverse={false}
+        />
+        <FullPageBanner
+            backgroundImage="./adopt-dont-shop.png"
+            headline="Adopt, Don't Shop!"
+            buttonText="Learn More"
+            buttonLink="/dogs"
+        />
+        <LetsConnect />
     </Main>
 </Layout>
- -->
