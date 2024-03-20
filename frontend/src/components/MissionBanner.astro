@@ -1,8 +1,6 @@
 ---
-// TODO: Debug image not showing up in netlify deploy with spencer. 
-const title = "Our Mission";
-const content =
-    "Our mission at FOMAS is to provide the highest quality of care to every dog we rescue.";
+const title = Astro.props.title;
+const content = Astro.props.content;
 ---
 
 <div class="bg-missionBannerImage bg-cover bg-center min-h-[375px] flex flex-col justify-center items-center text-center p-4";>
