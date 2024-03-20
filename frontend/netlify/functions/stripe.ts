@@ -1,7 +1,7 @@
-import Stripe from 'stripe';
-import { Handler } from '@netlify/functions';
+/* import Stripe from 'stripe';
+import type { Handler } from '@netlify/functions';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET as string, {
+const stripe = new Stripe("sk_test_51OrnI1D2yRGzZjIlaOTWWH3ZedF3g5lBI6Z2AGzNUwAojgzQccfPLxVW21OLOGi8nX4uTnercIJlJtXczjE11idc00UFtL06Rq", {
   apiVersion: '2023-10-16',
 });
 
@@ -63,3 +63,4 @@ const handler: Handler = async (event, context) => {
 };
 
 export { handler };
+ */
