@@ -1,22 +1,22 @@
-import { loadStripe } from '@stripe/stripe-js';
+/* import { loadStripe } from '@stripe/stripe-js';
 import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
 
 // Load Stripe.js
-const stripePromise = loadStripe('process.env.STRIPE_PUBLIC_KEY');
+
 
 const CheckoutForm = () => {
-  const stripe = useStripe();
-  const elements = useElements();
+  const stripe = useStripe()!
+  const elements = useElements()!
 // 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
 
     // Get the client secret from your server
-    const clientSecret = 'process.env.STRIPE_CLIENT_SECRET';
+    const clientSecret = process.env.PUBLIC_STRIPE || "pk_test_51OrnI1D2yRGzZjIlXz5Oz6nbokWF4g4BNiUgU3dHnnijbgmyVT7NqvYGsULRUUCDrwYHF2zIuKE2Ar6i1iyEkVc500NMYSmfbM"
 
     const result = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
-        card: elements.getElement(CardElement),
+        card: elements.getElement(CardElement)!,
       },
     });
 
@@ -37,10 +37,15 @@ const CheckoutForm = () => {
   );
 };
 
-const App = () => (
-  <Elements stripe={stripePromise}>
+const App = () => {
+  const key = process.env.PUBLIC_STRIPE! || "pk_test_51OrnI1D2yRGzZjIlXz5Oz6nbokWF4g4BNiUgU3dHnnijbgmyVT7NqvYGsULRUUCDrwYHF2zIuKE2Ar6i1iyEkVc500NMYSmfbM"
+  console.log(key);
+  const stripePromise = loadStripe(key);
+  return(
+    <Elements stripe={stripePromise}>
     <CheckoutForm />
   </Elements>
-);
+  )
+}
 
-export default App;
+export default App; */
