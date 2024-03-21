@@ -3,7 +3,6 @@ import { structureTool } from 'sanity/structure'
 import { netlifyTool } from 'sanity-plugin-netlify'
 import { dashboardTool } from "@sanity/dashboard";
 import { netlifyWidget } from "sanity-plugin-dashboard-widget-netlify";
-
 import { schemaTypes } from '../frontend/src/schemaTypes'
 
 export default defineConfig({

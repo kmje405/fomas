@@ -18,17 +18,7 @@ const {
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSC95R6NKG"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-VSC95R6NKG");
-    </script>
+   <!-- TODO: Reset Google Analytics Here -->
 
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -39,15 +29,6 @@ const {
     <title>{pageTitle}</title>
   </head>
   <body class="flex-col min-w-[375px]">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-MNRJQS2B"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"></iframe></noscript
-    >
-    <!-- End Google Tag Manager (noscript) -->
     <Header />
     <slot />
   </body>

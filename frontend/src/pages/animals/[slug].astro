@@ -23,11 +23,10 @@ const animal = await getAnimal(slug); // Function to fetch a single animal profi
       {
         animal.images && animal.images.length > 0 && (
           <div class="animal__images">
-            {animal.images.map((image, index) => (
+            {animal.images.map((image:any) => (
               <img
                 class="animal__image"
                 src={urlFor(image).width(400).url()}
-                alt={`Image ${index + 1}`}
               />
             ))}
           </div>
