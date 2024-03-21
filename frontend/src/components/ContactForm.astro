@@ -2,8 +2,9 @@
 import Main from '../components/Main.astro'
 import RightArrowButton from '../components/RightArrowButton.astro'
 ---
+<!-- TODO: Figure out how to stop the POST request since netlify is handling the form. -->
 <Main>
-<form name="contactForm" method="POST" data-netlify="true" class="flex flex-col bg-teal-300 max-w-lg mx-auto my-8 p-6 mx-6 rounded-3xl shadow">
+<form id="adoption-application" name="contactForm" method="POST" data-netlify="true" class="flex flex-col bg-teal-300 max-w-lg mx-auto my-8 p-6 mx-6 rounded-3xl shadow">
     <h2 class="text-center text-white font-bold text-5xl mb-6">Get In Touch!</h2>
     <input type="hidden" name="form-name" value="contactForm" />
 

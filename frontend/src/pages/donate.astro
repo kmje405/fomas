@@ -6,6 +6,10 @@ import Onebytwo from "../components/Onebytwo.astro";
 import FullPageBanner from "../components/FullPageBanner.astro";
 import LetsConnect from "../components/LetsConnect.astro";
 import PlaceholderBlock from "../components/PlaceholderBlock.astro";
+
+import { loadStripe } from "@stripe/stripe-js";
+const stripePromise = loadStripe(process.env.PUBLIC_STRIPE!);
+
 const pageTitle = "Donate";
 ---
 
