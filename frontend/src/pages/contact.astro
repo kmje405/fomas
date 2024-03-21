@@ -1,11 +1,13 @@
 ---
 import Main from '../components/Main.astro';
 import Layout from '../layouts/BaseLayout.astro';
-const pageTitle = "Contact";
+const pageTitle = "Contact Us";
+import ContactForm from '../components/ContactForm.astro';
 ---
 
 <Layout pageTitle={pageTitle}>
 	<Main>
-        <h1>Hello World</h1>
+        <h1>{pageTitle}</h1>
+        <ContactForm />
     </Main>
 </Layout>

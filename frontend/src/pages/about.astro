@@ -1,15 +1,69 @@
 ---
 import Main from "../components/Main.astro";
 import Layout from "../layouts/BaseLayout.astro";
-import ContactForm from "../components/ContactForm.astro";
+import MissionBanner from "../components/MissionBanner.astro";
+import WhyFomas from "../components/WhyFomas.astro";
+import WhoWeAre from "../components/WhoWeAre.astro";
+import Onebytwo from "../components/Onebytwo.astro";
+import FullPageBanner from "../components/FullPageBanner.astro";
 
 const pageTitle = "About";
 ---
 
 <Layout pageTitle={pageTitle}>
   <Main>
-    <body> 
-      <ContactForm />
+    <body class="text-center">
+      <MissionBanner
+        title="Our Mission"
+        content="Our mission at FOMAS is to provide the highest quality of care to every dog we rescue, to match them with the right families and resources, and to elevate the standard of animal welfare in the greater Mountainair area."
+      />
+      <WhyFomas
+        title="Our Story"
+        content="Every dog that comes through the doors of the Mountainair Animal Shelter receives more individualized attention than at other, larger shelters. We do not euthanize at our shelter, so if a dog comes in with serious behavioral or medical issues, we do everything in our capacity to address those needs, AND we have been 97% successful in these efforts, placing those dogs in permanent homes.Our volunteers have single-handedly rescued dozens of dogs from high-kill shelters, rehabilitated them for medical problems or emotional stress and gotten them adopted into loving homes. We believe there is a permanent home for every single dog."
+        imagePath="./horizontalPawprint 3.png"
+        logoPath="./FOMASlogo_h-bk 1.svg"
+      />
+      <WhoWeAre />
+      <h2 class="font-bold text-6xl text-center text-blue-600 my-4">
+        Our Board
+      </h2>
+      <Onebytwo
+        title="Jill Mulder"
+        description="President"
+        image="./horizontalPawprint 3.png"
+        reverse={false}
+      />
+      <Onebytwo
+        title="Karen Bernauer"
+        description="Vice President"
+        image="./horizontalPawprint 3.png"
+        reverse={true}
+      />
+      <Onebytwo
+        title="Linda Brown"
+        description="Treasurer"
+        image="./horizontalPawprint 3.png"
+        reverse={false}
+      />
+      <Onebytwo
+        title="Phillip Cox"
+        description="Secretary"
+        image="./horizontalPawprint 3.png"
+        reverse={true}
+      />
+      <FullPageBanner
+        headline="Got Questions?"
+        backgroundImage="./about-page-doggie.png"
+        buttonLink="/contact"
+        buttonText="Contact Us"
+      />
     </body>
   </Main>
 </Layout>
+<!-- 
+
+title: string;
+description?: string;
+image: string;
+buttonLink: string;
+reverse?: boolean; -->
