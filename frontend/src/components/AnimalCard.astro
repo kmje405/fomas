@@ -1,8 +1,8 @@
 ---
 // Define the props that AnimalCard will accept
 const {
-  url,
-  title,
+  slug,
+  name,
   breed,
   age,
   gender,
@@ -13,23 +13,24 @@ const {
   friendly_with,
   not_friendly_with,
   bio,
-  image_url,
+  images,
   adoption_status,
 } = Astro.props;
+console.log(Astro.props);
+
+// Assuming the first image in the array is the main image
+const mainImageUrl = images?.length > 0 ? images[0] : "/default-animal-image.jpeg";
 ---
 
-<div
-  class="card min-w-[320px] mt-8 rounded-3xl bg-blue-200 outline outline-slate-200 shadow-xl"
->
-  <a href={url} class="flex flex-col h-full">
-    <!-- Use the image URL directly, with a fallback to a default image -->
+<div class="card min-w-[320px] mt-8 rounded-3xl bg-blue-200 outline outline-slate-200 shadow-xl">
+  <a href={`/animals/${slug}`} class="flex flex-col h-full">
     <img
       class="rounded-t-3xl object-cover h-48 w-full"
-      src={image_url || "/default-animal-image.jpeg"}
-      alt={`Photo of ${title}`}
+      src={mainImageUrl}
+      alt={`Photo of ${name}`}
     />
     <div class="p-4 flex flex-col flex-grow">
-      <h2 class="title text-xl font-semibold text-blue-900">{title}</h2>
+      <h2 class="title text-xl font-semibold text-blue-900">{name}</h2>
       <p class="breed text-md text-blue-950">Breed: {breed}</p>
       <p class="age text-md text-blue-950">Age: {age}</p>
       <p class="gender text-md text-blue-950">Gender: {gender}</p>
@@ -44,10 +45,10 @@ const {
         Special Needs: {special_needs ? "Yes" : "No"}
       </p>
       <p class="friendly_with text-md text-blue-950">
-        Friendly With: {friendly_with.join(", ")}
+        Friendly With: {friendly_with?.join(", ")}
       </p>
       <p class="not_friendly_with text-md text-blue-950">
-        Not Friendly With: {not_friendly_with.join(", ")}
+        Not Friendly With: {not_friendly_with?.join(", ")}
       </p>
       <p class="bio text-gray-600 text-sm flex-grow line-clamp-3">{bio}</p>
       <p class="adoption_status text-md font-semibold">{adoption_status}</p>

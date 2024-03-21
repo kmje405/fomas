@@ -1,59 +1,51 @@
 ---
-import Main from "../components/Main.astro";
+// Import necessary components and utilities
+import { client } from "../libs/sanity/index";
 import Layout from "../layouts/BaseLayout.astro";
-// Fetch all animals
-const allAnimals = await Astro.glob('../pages/animals/*.md');
-const animals = allAnimals.map((animal) => {
-  const { title, breed, age, gender, size, vaccinated, spayed_neutered, special_needs, friendly_with, not_friendly_with, bio, image_url, adoption_status } = animal.frontmatter;
-  return {
-    url: animal.url,
-    title,
-    breed,
-    age,
-    gender,
-    size,
-    vaccinated,
-    spayed_neutered,
-    special_needs,
-    friendly_with,
-    not_friendly_with,
-    bio,
-    image_url,
-    adoption_status,
-  };
-});
-const pageTitle = "Animals";
-import AnimalCard from "../components/AnimalCard.astro";
----
+import AnimalCard from "../components/AnimalCard.astro"; // Adjusted for animal profiles
+import Main from "../components/Main.astro";
+import FullPageBanner from "../components/FullPageBanner.astro";
+import LetsConnect from "../components/LetsConnect.astro";
 
+// Fetch animal profiles
+const query = `*[_type == "animal" && defined(slug.current)] | order(name asc) {
+  _id,
+  name,
+  slug,
+  breed,
+  images,
+  bio,
+  "friendly_with": friendly_with[],
+  "not_friendly_with": not_friendly_with[],
+  adoption_status,
+}`;
+
+const dogs = await client.fetch(query);
+console.log(dogs);
+
+const pageTitle = "Adoption";
+---
 <Layout pageTitle={pageTitle}>
   <Main>
-    <div class="min-h-screen py-10">
-      <div class="max-w-6xl mx-auto px-4">
-        <h1 class="text-4xl font-bold text-center text-blue-900 my-8">{pageTitle}</h1>
-        <p class="text-lg text-blue-950 mb-4 text-center">Meet our adorable animals looking for their forever homes.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {animals.map((animal) => (
-            <AnimalCard
-              key={animal.url}
-              url={animal.url}
-              title={animal.title}
-              breed={animal.breed}
-              age={animal.age}
-              gender={animal.gender}
-              size={animal.size}
-              vaccinated={animal.vaccinated}
-              spayed_neutered={animal.spayed_neutered}
-              special_needs={animal.special_needs}
-              friendly_with={animal.friendly_with}
-              not_friendly_with={animal.not_friendly_with}
-              bio={animal.bio}
-              image_url={animal.image_url}
-              adoption_status={animal.adoption_status}
-            />
+    <FullPageBanner
+    headline="Adopt a Friend"
+    backgroundImage="./blog-topper.png"
+    buttonLink="/contact"
+    buttonText="Get Started"
+  />
+    <div class="min-h-screen py-10 bg-blue-200">
+      <div class="mx-auto">
+        <!-- Responsive grid for animal profiles -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto">
+          <!-- Map through animals and render each AnimalCard -->
+          {dogs.map((animal:any) => (
+            <div class="w-full"> <!-- Ensure each card takes full width -->
+              <AnimalCard animal={animal} />
+            </div>
           ))}
         </div>
       </div>
     </div>
+    <LetsConnect />
   </Main>
 </Layout>
