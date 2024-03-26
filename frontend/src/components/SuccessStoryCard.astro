@@ -4,31 +4,25 @@ const animalDescription = "Every dog that comes through the doors of the Mountai
 const cardTitle = "Meet Sophie!";
 const cardHeading = "Success Story";
 ---
-
-<div class="flex mx-auto bg-teal-300 sm:max-w-fit rounded-2xl mt-20 max-w-[90%] ">
-  <div
-    class="my-[-2rem] card w-[90%] ] bg-white mx-auto  max-w-md rounded-3xl shadow-xl transition-all border-2  border-teal-300 duration-300 ease-in-out hover:shadow-2xl "
-  >
-  <!-- TODO: Refactor so that the entire card is not wrapped by the a tag / inline only not block for a tags. -->
-    <a href="/dogs" class="flex-box">
-      <div class="p-4">
-        <p class="text-4xl font-bold px-4 text-blue-500">
-          {cardHeading}
-        </p>
-        <p class="text-2xl font-bold py-2 px-4 text-blue-500">{cardTitle}</p>
-        <img
-          class="rounded-3xl max-h-60 w-full object-cover"
-          src="/doggy.jpeg"
-          alt="Sophie"
-        />
-        <div class="px-4 py-2">
-          <p class=" prose prose-sm max-w-none">{animalDescription}</p>
-        </div>
-        <div class="flex items-center justify-center">
-          <RightArrowButton path="/dogs" />
-        </div>
+<!-- Outer container with full viewport width and teal background -->
+<div class="bg-teal-300 w-full mt-20 flex justify-center">
+  <div class="card w-[90%] max-w-md bg-white rounded-3xl shadow-xl transition-all border-2 border-teal-300 duration-300 ease-in-out hover:shadow-2xl my-[-2rem]">
+    <div class="p-4">
+      <p class="text-4xl font-bold px-4 text-blue-500">
+        {cardHeading}
+      </p>
+      <p class="text-2xl font-bold py-2 px-4 text-blue-500">{cardTitle}</p>
+      <img
+        class="rounded-3xl max-h-60 w-full object-cover"
+        src="/doggy.jpeg"
+        alt="Sophie"
+      />
+      <div class="px-4 py-2">
+        <p class="prose prose-sm max-w-none">{animalDescription}</p>
       </div>
-    </a>
+      <div class="flex items-center justify-center">
+        <RightArrowButton path="/dogs" />
+      </div>
+    </div>
   </div>
 </div>
-
