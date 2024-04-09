@@ -1,11 +1,36 @@
 ---
-import Main from '../components/Main.astro';
-import Layout from '../layouts/BaseLayout.astro';
+import Main from "../components/Main.astro";
+import Layout from "../layouts/BaseLayout.astro";
+import FullPageBanner from "../components/FullPageBanner.astro";
+import WhyFomas from "../components/WhyFomas.astro";
+import ContactForm from "../components/ContactForm.astro";
+import SupportOurMission from "../components/SupportOurMission.astro";
+import LetsConnect from "../components/LetsConnect.astro";
 const pageTitle = "Get Involved";
 ---
 
 <Layout pageTitle={pageTitle}>
-	<Main>
-        <h1>Hello World</h1>
+    <Main>
+        <FullPageBanner
+            backgroundImage="/get-involved-banner.png"
+            headline="Meet Your New Best Friend"
+            buttonText="Adopt Today"
+            buttonLink="/contact"
+        />
+        <WhyFomas
+            title="We Need Your Help!"
+            content="Our volunteers have single-handedly rescued dozens of dogs from high-kill shelters, rehabilitated them for medical problems or emotional stress and gotten them adopted into loving homes. We believe there is a permanent home for every single dog."
+            imagePath="/horizontalPawprint 3.png"
+        />
+        <SupportOurMission />
+        <ContactForm />
+        <FullPageBanner
+            backgroundImage="/got-questions.png"
+            headline="Got Questions?"
+            buttonText="Ask Us"
+            buttonLink="/contact"
+        />
+
+        <LetsConnect />
     </Main>
 </Layout>

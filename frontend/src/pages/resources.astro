@@ -1,11 +1,17 @@
 ---
 import Main from '../components/Main.astro';
 import Layout from '../layouts/BaseLayout.astro';
+import FullPageBanner from '../components/FullPageBanner.astro';
 const pageTitle = "Resources";
 ---
 
 <Layout pageTitle={pageTitle}>
 	<Main>
-        <h1>Hello World</h1>
+        <FullPageBanner 
+            backgroundImage = "/skyBannerBackground.png"
+            headline = "Resources"
+            buttonText = "Get Started"
+            buttonLink = "/get-involved"
+        />
     </Main>
 </Layout>

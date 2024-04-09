@@ -3,7 +3,7 @@
 const { title, imagePath, content, logoPath } = Astro.props;
 ---
 
-<div class="container mx-auto px-4 mt-8">
+<div class="container mx-auto md:max-w-[70%] px-4 mt-8">
     <h1 class="text-6xl pt-8 md:text-6xl text-blue-600 font-bold text-center">{title}</h1>
     <div class="flex flex-wrap justify-center mt-6">
         <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
@@ -11,7 +11,7 @@ const { title, imagePath, content, logoPath } = Astro.props;
         </div>
         <div class="w-full md:w-1/2 px-2">
             <p class="prose md:prose-lg">{content}</p>
-            <img src={logoPath} alt="FOMAS Logo" class="img-fluid mx-auto mt-4">
+            <img src={logoPath} alt="" class="img-fluid mx-auto mt-4">
         </div>
     </div>
 </div>
