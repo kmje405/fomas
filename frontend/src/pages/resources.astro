@@ -2,16 +2,37 @@
 import Main from '../components/Main.astro';
 import Layout from '../layouts/BaseLayout.astro';
 import FullPageBanner from '../components/FullPageBanner.astro';
+import ResourceCard from '../components/ResourceCard.astro';
 const pageTitle = "Resources";
 ---
 
 <Layout pageTitle={pageTitle}>
 	<Main>
+        <div class="bg-blue-200">
         <FullPageBanner 
             backgroundImage = "/skyBannerBackground.png"
             headline = "Resources"
             buttonText = "Get Started"
             buttonLink = "/get-involved"
         />
-    </Main>
+        <!-- Grid container -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <ResourceCard 
+                    title="JoyLoy Veterinary Services"
+                    buttonLink="https://joyloyvet.com/"
+                    cardImage="/joy-loy-resource.png"
+                    tag="Medical Care"
+                />
+                <ResourceCard 
+                    title="Medical Animal Pet Care Advice"
+                    buttonLink="https://medicanimal.com/"
+                    cardImage="/medic-animal-resource.png"
+                    tag="Resource Tag"
+                />
+                <!-- More ResourceCard components can be added here -->
+            </div>
+        </div>
+    </div>
+</Main>
 </Layout>
