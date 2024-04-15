@@ -3,6 +3,7 @@ import { mailingAddress, nonProfitStatus, phoneNumber } from "../constants";
 import emailIcon from "../images/emailIcon.png";
 import facebookIcon from "../images/facebookIcon.png";
 import { Image } from "astro:assets";
+import OrangeSquiggle from "../images/line-twOrange300.svg";
 ---
 
 <div class="flex flex-col p-4 bg-blue-200 px-[20%] py-8">
@@ -21,7 +22,7 @@ import { Image } from "astro:assets";
     </div>
   </div>
   <div class="divider flex justify-center my-4">
-    <img src="./line-twOrange300.svg" alt="decorative-divider" class="max-w-[80%]">
+    <Image src={OrangeSquiggle} alt="decorative-divider" class="max-w-[80%]">
   </div>
   <div class="contact-info flex flex-col text-center text-blue-900 text-2xl">
     <p class="py-2">{phoneNumber}</p>
