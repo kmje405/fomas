@@ -1,5 +1,6 @@
 ---
 import Onebytwo from "../components/Onebytwo.astro";
+import pawPrint from "../images/horizontalPawprint.png"
 ---
 
 <div class=" mx-auto md:max-w-[70%]">
@@ -7,20 +8,20 @@ import Onebytwo from "../components/Onebytwo.astro";
     <Onebytwo
         title="Donate"
         description="Donate to support our mission."
-        image="./horizontalPawprint 3.png"
+        image={pawPrint}
         buttonLink="https://donate.stripe.com/test_5kA6pL79J7u1bTObII"
     />
     <Onebytwo
         title="Volunteer"
         description="Volunteer to support our mission."
-        image="./horizontalPawprint 3.png"
+        image={pawPrint}
         buttonLink="/get-involved"
         reverse={true}
         />
     <Onebytwo
         title="Food Bank"
         description="Give resources to support our mission."
-        image="./horizontalPawprint 3.png"
+        image={pawPrint}
         buttonLink="/get-involved"
     />
 </div>

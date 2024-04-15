@@ -6,6 +6,7 @@ import WhyFomas from "../components/WhyFomas.astro";
 import ContactForm from "../components/ContactForm.astro";
 import SupportOurMission from "../components/SupportOurMission.astro";
 import LetsConnect from "../components/LetsConnect.astro";
+import pawPrint from "../images/horizontalPawprint.png";
 const pageTitle = "Get Involved";
 ---
 
@@ -20,7 +21,8 @@ const pageTitle = "Get Involved";
         <WhyFomas
             title="We Need Your Help!"
             content="Our volunteers have single-handedly rescued dozens of dogs from high-kill shelters, rehabilitated them for medical problems or emotional stress and gotten them adopted into loving homes. We believe there is a permanent home for every single dog."
-            imagePath="/horizontalPawprint 3.png"
+            image={pawPrint}
+            logo={pawPrint}
         />
         <SupportOurMission />
         <ContactForm />

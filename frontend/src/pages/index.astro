@@ -2,12 +2,16 @@
 import Layout from "../layouts/BaseLayout.astro";
 import Main from "../components/Main.astro";
 import FullPageBanner from "../components/FullPageBanner.astro";
-import Onebyone from "../components/Onebytwo.astro";
 import SuccessStoryCard from "../components/SuccessStoryCard.astro";
 import WhyFomas from "../components/WhyFomas.astro";
 import MissionBanner from "../components/MissionBanner.astro";
 import LetsConnect from "../components/LetsConnect.astro";
 import SupportOurMission from "../components/SupportOurMission.astro";
+import pawPrint from "../images/jill.png";
+import fomasLogo from "../images/logoBlack.svg";
+import Onebytwo from "../components/Onebytwo.astro";
+
+
 const pageTitle = "Home";
 ---
 
@@ -20,16 +24,16 @@ const pageTitle = "Home";
   />
   <Main>
     <div class="mx-auto md:max-w-[70%]">
-    <Onebyone
+    <Onebytwo
       title="Resources"
       description="Find a new forever friend today."
-      image="/horizontalPawprint 3.png"
+      image={pawPrint}
       buttonLink="/resources"
     />
-    <Onebyone
+    <Onebytwo
       title="Volunteer"
       description="Find a new forever friend today."
-      image="/horizontalPawprint 3.png"
+      image={pawPrint}
       buttonLink="/get-involved"
       reverse={true}
     />
@@ -38,8 +42,8 @@ const pageTitle = "Home";
     <WhyFomas
       title="Why Fomas?"
       content="Every dog that comes through the doors of the Mountainair Animal Shelter receives more individualized attention than at other, larger shelters. We do not euthanize at our shelter, so if a dog comes in with serious behavioral or medical issues, we do everything in our capacity to address those needs, AND we have been 97% successful in these efforts, placing those dogs in permanent homes."
-      imagePath="/horizontalPawprint 3.png"
-      logoPath="/FOMASlogo_h-bk 1.svg"
+      image={pawPrint}
+      logo={fomasLogo}
     />
     <MissionBanner
       title="Our Mission"

@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import RightArrowButton from './RightArrowButton.astro';
+
 // TODO: Rename to describe behavior rather than layout CTA Image / with text.
 // TODO: Consider using a variant instead of reverse (image left / image right)
 
@@ -7,7 +9,7 @@ import RightArrowButton from './RightArrowButton.astro';
 interface Props {
   title: string;
   description?: string;
-  image: string;
+  image: ImageMetadata;
   buttonLink: string;
   reverse?: boolean;
 }
@@ -27,6 +29,6 @@ const { title, description, image, buttonLink, reverse = false }: Props = Astro.
   </div>
   <!-- Image column, order changes if reverse is true -->
   <div class={`${reverse ? 'order-first' : 'order-last'}`}>
-    <img src={image} alt={title} class="rounded-lg w-full h-auto" />
+    <Image src={image} alt={title} class="rounded-lg w-full h-auto" />
   </div>
 </div>

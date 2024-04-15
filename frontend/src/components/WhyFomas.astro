@@ -1,17 +1,27 @@
 ---
+import { Image } from 'astro:assets';
+
 // Define the props that the component will accept
-const { title, imagePath, content, logoPath } = Astro.props;
+
+interface Props {
+  title: string;
+  image: ImageMetadata;
+  content: string;
+  logo: ImageMetadata;
+}
+
+const { title, image, content, logo } = Astro.props;
 ---
 
 <div class="container mx-auto md:max-w-[70%] px-4 mt-8">
     <h1 class="text-6xl pt-8 md:text-6xl text-blue-600 font-bold text-center">{title}</h1>
     <div class="flex flex-wrap justify-center mt-6">
         <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-            <img src={imagePath} alt="Pawprint" class="img-fluid mx-auto">
+            <Image src={image} alt="Pawprint" class="img-fluid mx-auto">
         </div>
         <div class="w-full md:w-1/2 px-2">
             <p class="prose md:prose-lg">{content}</p>
-            <img src={logoPath} alt="" class="img-fluid mx-auto mt-4">
+            <Image src={logo} alt="" class="img-fluid mx-auto mt-4">
         </div>
     </div>
 </div>

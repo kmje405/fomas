@@ -6,6 +6,9 @@ import WhyFomas from "../components/WhyFomas.astro";
 import WhoWeAre from "../components/WhoWeAre.astro";
 import Onebytwo from "../components/Onebytwo.astro";
 import FullPageBanner from "../components/FullPageBanner.astro";
+import pawPrint from "../images/horizontalPawprint.png" 
+import jill from "../images/jill.png"
+import logo from "../images/logoBlack.svg"
 
 const pageTitle = "About";
 ---
@@ -20,8 +23,8 @@ const pageTitle = "About";
       <WhyFomas
         title="Our Story"
         content="Every dog that comes through the doors of the Mountainair Animal Shelter receives more individualized attention than at other, larger shelters. We do not euthanize at our shelter, so if a dog comes in with serious behavioral or medical issues, we do everything in our capacity to address those needs, AND we have been 97% successful in these efforts, placing those dogs in permanent homes.Our volunteers have single-handedly rescued dozens of dogs from high-kill shelters, rehabilitated them for medical problems or emotional stress and gotten them adopted into loving homes. We believe there is a permanent home for every single dog."
-        imagePath="./horizontalPawprint 3.png"
-        logoPath="./FOMASlogo_h-bk 1.svg"
+        image={pawPrint}
+        logo={pawPrint}
       />
       <WhoWeAre />
       <h2 class="font-bold text-6xl text-center text-blue-600 my-4">
@@ -31,28 +34,28 @@ const pageTitle = "About";
         <Onebytwo
           title="Jill Mulder"
           description="President"
-          image="./horizontalPawprint 3.png"
+          image={jill}
           reverse={false}
           buttonLink="/president"
         />
         <Onebytwo
           title="Karen Bernauer"
           description="Vice President"
-          image="./horizontalPawprint 3.png"
+          image={jill}
           reverse={true}
           buttonLink="/president"
         />
         <Onebytwo
           title="Linda Brown"
           description="Treasurer"
-          image="./horizontalPawprint 3.png"
+          image={jill}
           reverse={false}
           buttonLink="/president"
         />
         <Onebytwo
           title="Phillip Cox"
           description="Secretary"
-          image="./horizontalPawprint 3.png"
+          image={jill}
           reverse={true}
           buttonLink="/president"
         />

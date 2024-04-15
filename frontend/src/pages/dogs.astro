@@ -8,16 +8,18 @@ import FullPageBanner from "../components/FullPageBanner.astro";
 import LetsConnect from "../components/LetsConnect.astro";
 
 // Fetch animal profiles
-const query = `*[_type == "animal" && defined(slug.current)] | order(name asc) {
+const query = `*[_type == "animal" ] | order(name asc) {
   _id,
-  name,
   slug,
-  breed,
-  images,
-  bio,
-  "friendly_with": friendly_with[],
-  "not_friendly_with": not_friendly_with[],
-  adoption_status,
+breed,
+images,
+name,
+bio,
+"friendly_with": friendly_with[],
+"not_friendly_with": not_friendly_with[],
+adoption_status,
+
+ 
 }`;
 
 const dogs = await client.fetch(query);
@@ -49,3 +51,5 @@ const pageTitle = "Adoption";
     <LetsConnect />
   </Main>
 </Layout>
+<!-- name,
+ -->

@@ -8,19 +8,11 @@ import FullPageBanner from "../components/FullPageBanner.astro";
 import LetsConnect from "../components/LetsConnect.astro";
 
 // Fetch posts
-const query = `*[_type == "post" && defined(slug)] | order(publishedAt desc) {
-  _id,
-  title,
-  slug,
-  publishedAt,
-  mainImage,
-  body,
-  "author": author->name,
-
-}`;
+const query = `*[_type == "post"]`;
 
 const posts = await client.fetch(query);
 const pageTitle = "Blog";
+console.log(posts);
 ---
 <Layout pageTitle={pageTitle}>
   <Main>
@@ -47,4 +39,12 @@ const pageTitle = "Blog";
   </Main>
 </Layout>
 
-
+<!-- 
+&& defined(slug)] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  publishedAt,
+  mainImage,
+  body,
+  "author": author->name, -->

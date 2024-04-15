@@ -3,11 +3,12 @@ import Main from '../components/Main.astro';
 import Layout from '../layouts/BaseLayout.astro';
 const pageTitle = "Contact Us";
 import ContactForm from '../components/ContactForm.astro';
+import LetsConnect from '../components/LetsConnect.astro';
 ---
 
 <Layout pageTitle={pageTitle}>
 	<Main>
-        <h1>{pageTitle}</h1>
         <ContactForm />
+        <LetsConnect />
     </Main>
 </Layout>
