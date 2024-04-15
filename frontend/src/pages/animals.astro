@@ -6,6 +6,7 @@ import AnimalCard from "../components/AnimalCard.astro"; // Adjusted for animal 
 import Main from "../components/Main.astro";
 import FullPageBanner from "../components/FullPageBanner.astro";
 import LetsConnect from "../components/LetsConnect.astro";
+import BannerImage from "../images/blog-topper.png";
 
 // Fetch animal profiles
 const query = `*[_type == "animal" ] | order(name asc) {
@@ -31,11 +32,11 @@ const pageTitle = "Adoption";
 <Layout pageTitle={pageTitle}>
   <Main>
     <FullPageBanner
-    headline="Adopt a Friend"
-    backgroundImage="./blog-topper.png"
+    backgroundImage="/get-involved-banner.png"
+    headline="Meet Your New Best Friend"
+    buttonText="Adopt Today"
     buttonLink="/contact"
-    buttonText="Get Started"
-  />
+/>
     <div class="min-h-screen py-8 bg-blue-200">
       <div>
         <!-- Responsive grid for animal profiles -->
