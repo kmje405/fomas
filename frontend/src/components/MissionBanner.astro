@@ -1,12 +1,14 @@
 ---
 const title = Astro.props.title;
 const content = Astro.props.content;
+import { Image } from "astro:assets";
+import OrangeSquiggle from "./line-twOrange300.svg";
 ---
 
 <div class="bg-missionBannerImage bg-cover bg-center min-h-[375px] flex flex-col justify-center items-center text-center p-4";>
     <div class="inner bg-white rounded-xl px-4 py-6">
         <h1 class="text-4xl pb-3 md:text-4xl font-bold text-blue-600">{title}</h1>
-        <img src="./line-twOrange300.svg" alt="a wavy orange line separating the title from the content.">
+        <Image src={OrangeSquiggle} alt="a wavy orange line separating the title from the content.">
         <p class="text-blue-900 prose lg:prose-lg mx-auto  mt-4">{content}</p>
     </div>
 </div>
