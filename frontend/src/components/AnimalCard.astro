@@ -1,63 +1,33 @@
 ---
-// Import necessary libraries or utilities
+// Component Logic
 import { urlFor } from "../libs/sanity/image";
 
-// Assuming Astro.props.animal is passed correctly to this component
 const {
   slug,
   name,
   breed,
-  age,
-  gender,
-  size,
-  vaccinated,
-  spayed_neutered,
-  special_needs,
   friendly_with,
-  not_friendly_with,
-  bio,
+  age,
   images,
-  adoption_status,
 } = Astro.props.animal;
 
-// URL for the main image or a default placeholder if none exists
 const mainImageUrl = images?.length > 0 ? urlFor(images[0]).url() : "/default-animal-image.jpeg";
-
-// Join arrays into comma-separated strings, defaulting to "Not specified" if empty
-const friendlyWithText = friendly_with?.length > 0 ? friendly_with.join(", ") : "Not specified";
-const notFriendlyWithText = not_friendly_with?.length > 0 ? not_friendly_with.join(", ") : "Not specified";
 ---
 
-<div class="card min-w-[320px] mt-8 rounded-3xl bg-blue-200 outline outline-slate-200 shadow-xl">
-  <a href={`/animals/${slug.current}`} class="flex flex-col h-full">
-    <img
-      class="rounded-t-3xl object-cover h-48 w-full"
-      src={mainImageUrl}
-      alt={`Photo of ${name}`}
-    />
-    <div class="p-4 flex flex-col flex-grow">
-      <h2 class="title text-xl font-semibold text-blue-900">{name}</h2>
-      <p class="breed text-md text-blue-950">Breed: {breed}</p>
-      <p class="age text-md text-blue-950">Age: {age}</p>
-      <p class="gender text-md text-blue-950">Gender: {gender}</p>
-      <p class="size text-md text-blue-950">Size: {size}</p>
-      <p class="vaccinated text-md text-blue-950">
-        Vaccinated: {vaccinated ? "Yes" : "No"}
-      </p>
-      <p class="spayed_neutered text-md text-blue-950">
-        Spayed/Neutered: {spayed_neutered ? "Yes" : "No"}
-      </p>
-      <p class="special_needs text-md text-blue-950">
-        Special Needs: {special_needs ? "Yes" : "No"}
-      </p>
-      <p class="friendly_with text-md text-blue-950">
-        Friendly With: {friendlyWithText}
-      </p>
-      <p class="not_friendly_with text-md text-blue-950">
-        Not Friendly With: {notFriendlyWithText}
-      </p>
-      <p class="bio text-gray-600 text-sm flex-grow line-clamp-3">{bio}</p>
-      <p class="adoption_status text-md font-semibold">{adoption_status}</p>
+<div class="card min-w-[90%] mx-4 my-8 p-4 bg-white shadow-lg rounded-3xl overflow-hidden">
+  <a href={`/animals/${slug.current}`} class="block">
+    <div class="p-2 bg-white flex justify-center">
+      <img class="rounded-2xl object-cover max-w-cover" src={mainImageUrl} alt={`Photo of ${name}`} />
+    </div>
+    <div class="px-4 py-2 text-center">
+      <h2 class="text-3xl font-extrabold text-blue-600">{name}</h2>
+      <p class="text-xl text-blue-950">Breed: {breed}</p>
+      <p class="text-md text-blue-950">Age: {age}</p>
+      <div class="flex flex-wrap justify-center gap-2 mt-3">
+        {friendly_with.map((friend: string) => (
+          <span class="px-3 py-1 rounded-full bg-blue-200 text-blue-800 text-md font-semibold">{friend}</span>
+        ))}
+      </div>
     </div>
   </a>
 </div>

@@ -18,6 +18,7 @@ bio,
 "friendly_with": friendly_with[],
 "not_friendly_with": not_friendly_with[],
 adoption_status,
+age
 
  
 }`;
@@ -35,13 +36,13 @@ const pageTitle = "Adoption";
     buttonLink="/contact"
     buttonText="Get Started"
   />
-    <div class="min-h-screen py-10 bg-blue-200">
-      <div class="mx-auto">
+    <div class="min-h-screen py-8 bg-blue-200">
+      <div>
         <!-- Responsive grid for animal profiles -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 mx-auto">
           <!-- Map through animals and render each AnimalCard -->
           {dogs.map((animal:any) => (
-            <div class="w-full"> <!-- Ensure each card takes full width -->
+            <div> <!-- Ensure each card takes full width -->
               <AnimalCard animal={animal} />
             </div>
           ))}
@@ -51,5 +52,3 @@ const pageTitle = "Adoption";
     <LetsConnect />
   </Main>
 </Layout>
-<!-- name,
- -->
