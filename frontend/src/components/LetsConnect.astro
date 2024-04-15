@@ -1,5 +1,8 @@
 ---
 import { mailingAddress, nonProfitStatus, phoneNumber } from "../constants";
+import emailIcon from "../images/emailIcon.png";
+import facebookIcon from "../images/facebookIcon.png";
+import { Image } from "astro:assets";
 ---
 
 <div class="flex flex-col p-4 bg-blue-200 px-[20%] py-8">
@@ -10,10 +13,10 @@ import { mailingAddress, nonProfitStatus, phoneNumber } from "../constants";
     <div class="flex flex-row">
       <!-- Social Links with added margin for the email icon -->
       <a href="mailto:woof@fomas.org" aria-label="Email" class="mr-4">
-        <img src="./emailIcon.png" alt="Email" class="w-10 h-10" />
+        <Image src={emailIcon} alt="Email" class="w-10 h-10" />
       </a>
       <a href="https://www.facebook.com" aria-label="Facebook">
-        <img src="./facebookIcon.png" alt="Facebook" class="w-10 h-10" />
+        <Image src={facebookIcon} alt="Facebook" class="w-10 h-10" />
       </a>
     </div>
   </div>
