@@ -9,8 +9,11 @@ export async function getStaticPaths() {
   const animals = await getAnimals(); // Function to fetch all animal profiles
   return animals.map((animal: any) => ({
     params: { slug: animal.slug.current },
+
   }));
+  console.log(animals);
 }
+
 
 const { slug } = Astro.params;
 const animal = await getAnimal(slug); // Function to fetch a single animal profile based on slug

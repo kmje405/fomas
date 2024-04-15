@@ -1,5 +1,8 @@
 ---
-// Define the props that AnimalCard will accept
+// Import necessary libraries or utilities
+import { urlFor } from "../libs/sanity/image";
+
+// Assuming Astro.props.animal is passed correctly to this component
 const {
   slug,
   name,
@@ -15,15 +18,18 @@ const {
   bio,
   images,
   adoption_status,
-} = Astro.props;
-console.log(Astro.props);
+} = Astro.props.animal;
 
-// Assuming the first image in the array is the main image
-const mainImageUrl = images?.length > 0 ? images[0] : "/default-animal-image.jpeg";
+// URL for the main image or a default placeholder if none exists
+const mainImageUrl = images?.length > 0 ? urlFor(images[0]).url() : "/default-animal-image.jpeg";
+
+// Join arrays into comma-separated strings, defaulting to "Not specified" if empty
+const friendlyWithText = friendly_with?.length > 0 ? friendly_with.join(", ") : "Not specified";
+const notFriendlyWithText = not_friendly_with?.length > 0 ? not_friendly_with.join(", ") : "Not specified";
 ---
 
 <div class="card min-w-[320px] mt-8 rounded-3xl bg-blue-200 outline outline-slate-200 shadow-xl">
-  <a href={`/animals/${slug}`} class="flex flex-col h-full">
+  <a href={`/animals/${slug.current}`} class="flex flex-col h-full">
     <img
       class="rounded-t-3xl object-cover h-48 w-full"
       src={mainImageUrl}
@@ -45,10 +51,10 @@ const mainImageUrl = images?.length > 0 ? images[0] : "/default-animal-image.jpe
         Special Needs: {special_needs ? "Yes" : "No"}
       </p>
       <p class="friendly_with text-md text-blue-950">
-        Friendly With: {friendly_with?.join(", ")}
+        Friendly With: {friendlyWithText}
       </p>
       <p class="not_friendly_with text-md text-blue-950">
-        Not Friendly With: {not_friendly_with?.join(", ")}
+        Not Friendly With: {notFriendlyWithText}
       </p>
       <p class="bio text-gray-600 text-sm flex-grow line-clamp-3">{bio}</p>
       <p class="adoption_status text-md font-semibold">{adoption_status}</p>
