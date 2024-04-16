@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import rightArrow from "../images/right-arrow.svg";
 // Import the SVG as a string
 
 interface Props {
@@ -11,5 +13,5 @@ const  {path} : Props = Astro.props;
 
 <a href={path} class="max-w-[80px] inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full transition duration-150 ease-in-out">
   {/* Using the SVG as an image source */}
-  <img src="./right-arrow.svg" alt="Right Arrow" class="w-4 h-4" />
+  <Image src={rightArrow} alt="Right Arrow" class="w-4 h-4" />
 </a>
