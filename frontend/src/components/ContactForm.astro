@@ -2,14 +2,13 @@
 import Main from "../components/Main.astro";
 ---
 
-<!-- TODO: Figure out how to stop the POST request since netlify is handling the form. -->
 <Main>
   <form
-    id="adoption-application"
+    id="contact-form"
     name="contactForm"
     method="POST"
     data-netlify="true"
-    class="flex flex-col bg-teal-300 md:max-w-[90%] md:max-w-[600px] xs:max-w-[90%] my-6 mx-auto p-6 rounded-3xl shadow"
+    class="flex flex-col bg-teal-300 max-w-[600px] xs:max-w-[90%] my-6 mx-4 p-6 rounded-3xl shadow mx-auto"
   >
     <h2 class="text-center text-white font-bold text-5xl mb-6">
       Get In Touch!
@@ -17,43 +16,50 @@ import Main from "../components/Main.astro";
     <input type="hidden" name="form-name" value="contactForm" />
 
     <div class="mb-4">
-      <label for="name" class="sr-only">Your Name</label>
+      <label for="name" class="block text-sm font-medium text-gray-700"
+        >Your Name</label
+      >
       <input
         type="text"
         name="name"
         id="name"
-        placeholder="name"
+        placeholder="Enter your name"
         required
-        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       />
     </div>
 
     <div class="mb-4">
-      <label for="email" class="sr-only">Your Email</label>
+      <label for="email" class="block text-sm font-medium text-gray-700"
+        >Your Email</label
+      >
       <input
         type="email"
         name="email"
         id="email"
-        placeholder="email"
+        placeholder="Enter your email"
         required
-        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       />
     </div>
 
     <div class="mb-4">
-      <label for="message" class="sr-only">Message</label>
+      <label for="message" class="block text-sm font-medium text-gray-700"
+        >Message</label
+      >
       <textarea
         name="message"
         id="message"
-        placeholder="message"
+        placeholder="Write your message"
         required
-        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       ></textarea>
     </div>
 
     <div class="flex justify-center">
       <button
         type="submit"
+        aria-label="Send message"
         class="w-1/2 flex justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-bold text-white bg-blue-600 hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
         Send
