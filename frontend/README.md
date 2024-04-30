@@ -36,17 +36,14 @@ This project is a dynamic, responsive animal shelter website designed to facilit
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps:
-
-```bash
 # Clone the repository
 git clone [your-repository-link]
 
 # Navigate to the project directory
 cd animal-shelter-website
 
-# Install dependencies
-npm install
+# Install dependencies with pnpm
+pnpm install
 
 # Serve with hot reload at localhost:3000
-npm run dev
+pnpm run dev
