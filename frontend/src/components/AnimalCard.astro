@@ -1,17 +1,18 @@
 ---
 // Component Logic
 import { urlFor } from "../libs/sanity/image";
+import placeholderImage from "../../public/doggie-fallback.webp";
 
 const {
   slug,
   name,
-  breed,
   friendly_with,
   age,
   images,
+  breed,
 } = Astro.props.animal;
 
-const mainImageUrl = images?.length > 0 ? urlFor(images[0]).url() : "/default-animal-image.jpeg";
+const mainImageUrl = images?.length > 0 ? urlFor(images[0]).url() : placeholderImage.src;
 ---
 
 <div class="card min-w-[90%] mx-4 my-8 p-4 bg-white shadow-lg rounded-3xl overflow-hidden">
