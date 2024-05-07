@@ -15,12 +15,12 @@ const {
 const mainImageUrl = images?.length > 0 ? urlFor(images[0]).url() : placeholderImage.src;
 ---
 
-<div class="card min-w-[90%] mx-4 my-8 p-4 bg-white shadow-lg rounded-3xl overflow-hidden">
+<div class="card min-w-[90%] mx-4 my-8 p-4 bg-white shadow-lg rounded-3xl overflow-hidden max-h-[522px] min-h-[522px]">
   <a href={`/animals/${slug.current}`} class="block">
     <div class="p-2 bg-white flex justify-center">
-      <img class="rounded-2xl object-cover max-w-cover" src={mainImageUrl} alt={`Photo of ${name}`} />
+      <img class="rounded-2xl w-full h-72 object-cover " src={mainImageUrl} alt={`Photo of ${name}`} height="200" />
     </div>
-    <div class="px-4 py-2 text-center">
+    <div class="px-4 py-2 text-center flex-col stretch">
       <h2 class="text-3xl font-extrabold text-blue-600">{name}</h2>
       <p class="text-xl text-blue-950">Breed: {breed}</p>
       <p class="text-md text-blue-950">Age: {age}</p>
