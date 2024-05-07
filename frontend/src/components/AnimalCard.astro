@@ -18,15 +18,16 @@ const mainImageUrl = images?.length > 0 ? urlFor(images[0]).url() : placeholderI
 <div class="card min-w-[90%] mx-4 my-8 p-4 bg-white shadow-lg rounded-3xl overflow-hidden max-h-[522px] min-h-[522px]">
   <a href={`/animals/${slug.current}`} class="block">
     <div class="p-2 bg-white flex justify-center">
-      <img class="rounded-2xl w-full h-72 object-cover " src={mainImageUrl} alt={`Photo of ${name}`} height="200" />
+      <img class="rounded-2xl w-full max-h-72 object-cover " src={mainImageUrl} alt={`Photo of ${name}`} height="200" />
     </div>
     <div class="px-4 py-2 text-center flex-col stretch">
       <h2 class="text-3xl font-extrabold text-blue-600">{name}</h2>
       <p class="text-xl text-blue-950">Breed: {breed}</p>
       <p class="text-md text-blue-950">Age: {age}</p>
       <div class="flex flex-wrap justify-center gap-2 mt-3">
-        {friendly_with.map((friend: string) => (
-          <span class="px-3 py-1 rounded-full bg-blue-200 text-blue-800 text-md font-semibold">{friend}</span>
+        <p class="prose">Good with: </p>
+        {friendly_with.map((friend: string) => ( 
+        <span class="px-3 py-1 rounded-full bg-blue-200 text-blue-800 text-md font-semibold">{friend}</span>
         ))}
       </div>
     </div>
