@@ -19,12 +19,12 @@ const post = await getPost(slug);
 
 <BaseLayout pageTitle={post.title}>
   <Main>
-    <article class="mx-auto prose prose2xl">
-      <h1 class="mt-8">{post.title}</h1>
+    <article class="mx-auto prose prose2xl min-h-screen">
+      <h1 class="mt-8 text-blue-600 text-center">{post.title}</h1>
       {
         post.mainImage && (
           <img
-            class="post__cover"
+            class="post__cover w-full mt-8"
             src={urlFor(post.mainImage).width(400).url()}
             alt="Cover image"
           />
