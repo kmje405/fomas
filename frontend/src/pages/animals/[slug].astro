@@ -21,8 +21,8 @@ const animal = await getAnimal(slug); // Function to fetch a single animal profi
 
 <BaseLayout pageTitle={animal.name}>
   <Main>
-    <article class="mx-auto prose prose-lg">
-      <h1 class="mt-8">{animal.name}</h1>
+    <article class="mx-auto min-h-screen prose prose-lg">
+      <h1 class="mt-8 text-blue-600 text-center">{animal.name}</h1>
       {
         animal.images && animal.images.length > 0 && (
           <div class="animal__images">
