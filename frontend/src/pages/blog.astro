@@ -12,7 +12,6 @@ const query = `*[_type == "post"]`;
 
 const posts = await client.fetch(query);
 const pageTitle = "Blog";
-console.log(posts);
 ---
 <Layout pageTitle={pageTitle}>
   <Main>
@@ -25,7 +24,7 @@ console.log(posts);
     <div class="min-h-screen py-10 bg-blue-200">
       <div class=" mx-auto">
         <!-- Responsive grid: single column by default, 3 columns from 'md' breakpoint and up -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto">
           <!-- Map through posts and render each BlogCard -->
           {posts.map((post:any) => (
             <div class=""> <!-- Use w-full to ensure each card takes up the full width of its grid cell -->
