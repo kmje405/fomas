@@ -1,5 +1,7 @@
 ---
-import { Image } from 'astro:assets';
+import Image from "astro/components/Image.astro";
+import tealSquiggle from "../images/decorations/squiggle-long-teal300.svg";
+
 
 interface Props {
   title: string;
@@ -14,6 +16,11 @@ const { title, image, content, logo } = Astro.props;
 <div class="container mx-auto md:max-w-[70%] px-4 mt-8">
     <header>
         <h1 class="text-6xl pt-8 md:text-6xl text-blue-600 font-bold text-center">{title}</h1>
+        <Image
+        src={tealSquiggle}
+        alt="Orange squiggle"
+        class="mx-auto w-[60%] md:w-[40%] mt-4 mb-8"
+      />
     </header>
     <div class="flex flex-wrap justify-center mt-6">
         <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
