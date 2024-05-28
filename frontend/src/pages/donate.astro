@@ -6,7 +6,8 @@ import Onebytwo from "../components/Onebytwo.astro";
 import FullPageBanner from "../components/FullPageBanner.astro";
 import LetsConnect from "../components/LetsConnect.astro";
 const pageTitle = "Donate";
-import pawPrint from "../images/horizontalPawprint.png";
+import volunteerPawPrint from "../images/pawPrints/volunteerL.png";
+import helpPawPrint from "../images/pawPrints/amazonWishlistR.png"
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -22,15 +23,17 @@ import pawPrint from "../images/horizontalPawprint.png";
         <div class="mx-auto md:max-w-[70%]">
         <Onebytwo
             title="Volunteer"
-            image={pawPrint}
-            buttonLink="/get-involved"
+            image={volunteerPawPrint}
+            buttonLink="/volunteer"
             reverse={true}
+            altText="Paw Print"
         />
         <Onebytwo
             title="Give Food & Supplies"
-            image={pawPrint}
-            buttonLink="/get-involved"
+            image={helpPawPrint}
+            buttonLink="/volunteer"
             reverse={false}
+            altText="Paw Print"
         />
     </div>
         <FullPageBanner
