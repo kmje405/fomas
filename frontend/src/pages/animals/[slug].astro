@@ -24,7 +24,7 @@ const animal = await getAnimal(slug); // Function to fetch a single animal profi
       <h1 class="mt-8 text-blue-600 text-center">{animal.name}</h1>
       {
         animal.images && animal.images.length > 0 && (
-          <div class="animal__images">
+          <div class="animal__images flex flex-col-2 gap-6">
             {animal.images.map((image:any) => (
               <img
                 class="animal__image"
@@ -34,10 +34,10 @@ const animal = await getAnimal(slug); // Function to fetch a single animal profi
           </div>
         )
       }
-      <div class="mt-4">
+      <div class="my-4">
         <PortableText value={animal.bio} />
       </div>
-      <div class="mt-4">
+      <div class="my-6">
         <strong>Breed:</strong> {animal.breed}
         <br />
         <strong>Age:</strong> {animal.age}
