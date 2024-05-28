@@ -2,6 +2,9 @@
 // Importing components and assets
 import Onebytwo from "../components/Onebytwo.astro";
 import pawPrint from "../images/horizontalPawprint.png"
+import donateGraphic from "../images/pawPrints/donateR.png"
+import volunteerGraphic from "../images/pawPrints/volunteerL.png"
+import foodBankGraphic from "../images/pawPrints/spayNeuterR.png"
 ---
 
 <div class="container mx-auto max-w-[1200px] lg:px-[10%] px-4">
@@ -10,23 +13,23 @@ import pawPrint from "../images/horizontalPawprint.png"
         <Onebytwo
             title="Donate"
             description="Help us make a difference with your donations."
-            image={pawPrint}
+            image={donateGraphic}
             buttonLink="https://donate.stripe.com/test_5kA6pL79J7u1bTObII"
             altText="Image of a pawprint representing donations"
         />
         <Onebytwo
             title="Volunteer"
             description="Join our team to make hands-on contributions."
-            image={pawPrint}
-            buttonLink="/get-involved"
+            image={volunteerGraphic}
+            buttonLink="/volunteer"
             altText="Image of a pawprint representing volunteering"
             reverse={true}
         />
         <Onebytwo
             title="Food Bank"
             description="Provide food supplies to those in need under our care."
-            image={pawPrint}
-            buttonLink="/get-involved"
+            image={foodBankGraphic}
+            buttonLink="/volunteer"
             altText="Image of a pawprint representing food donations"
         />
     </div>

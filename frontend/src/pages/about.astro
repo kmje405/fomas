@@ -7,8 +7,11 @@ import WhoWeAre from "../components/WhoWeAre.astro";
 import Onebytwo from "../components/Onebytwo.astro";
 import FullPageBanner from "../components/FullPageBanner.astro";
 import pawPrint from "../images/horizontalPawprint.png" 
-import jill from "../images/jill.png"
-import logo from "../images/logoBlack.svg"
+import jill from "../images/boardMembers/jillMulderR.png"
+import karen from "../images/boardMembers/karenBernauerL.png"
+import linda from "../images/boardMembers/lindaBrownR.png"
+import phil from "../images/boardMembers/philipCoxL.png"
+import peter from "../images/boardMembers/peterR.png"
 
 const pageTitle = "About";
 ---
@@ -42,7 +45,7 @@ const pageTitle = "About";
         <Onebytwo
           title="Karen Bernauer"
           description="Vice President"
-          image={jill}
+          image={karen}
           reverse={true}
           buttonLink="/president"
           altText="Karen Bernauer, Vice President"
@@ -50,7 +53,7 @@ const pageTitle = "About";
         <Onebytwo
           title="Linda Brown"
           description="Treasurer"
-          image={jill}
+          image={linda}
           reverse={false}
           buttonLink="/president"
           altText="Linda Brown, Treasurer"
@@ -58,11 +61,20 @@ const pageTitle = "About";
         <Onebytwo
           title="Phillip Cox"
           description="Secretary"
-          image={jill}
+          image={phil}
           reverse={true}
           buttonLink="/president"
           altText="Phillip Cox, Secretary"
         />
+        <Onebytwo
+        title="Peter"
+        description="Secretary"
+        image={peter}
+        reverse={false}
+        buttonLink="/president"
+        altText="Phillip Cox, Secretary"
+      />
+
       </div>
 
       <FullPageBanner

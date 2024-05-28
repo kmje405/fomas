@@ -7,8 +7,10 @@ import WhyFomas from "../components/WhyFomas.astro";
 import MissionBanner from "../components/MissionBanner.astro";
 import LetsConnect from "../components/LetsConnect.astro";
 import SupportOurMission from "../components/SupportOurMission.astro";
-import pawPrint from "../images/jill.png";
-import fomasLogo from "../images/logoBlack.svg";
+import resourcesPawPrint from "../images/pawPrints/resourcesR.png";
+import volunteerPawPrint from "../images/pawPrints/volunteerL.png";
+import whyPawPrint from "../images/pawPrints/whyFomasV.png";
+import fomasLogo from "../images/logos/fomas-full-blue.jpg";
 import Onebytwo from "../components/Onebytwo.astro";
 
 
@@ -27,14 +29,14 @@ const pageTitle = "Home";
     <Onebytwo
       title="Resources"
       description="Find a new forever friend today."
-      image={pawPrint}
+      image={resourcesPawPrint}
       buttonLink="/resources"
       altText="Click to go to resources"
     />
     <Onebytwo
       title="Volunteer"
       description="Find a new forever friend today."
-      image={pawPrint}
+      image={volunteerPawPrint}
       buttonLink="/get-involved"
       reverse={true}
       altText="Click to go to the volunteer page"
@@ -44,7 +46,7 @@ const pageTitle = "Home";
     <WhyFomas
       title="Why Fomas?"
       content="Every dog that comes through the doors of the Mountainair Animal Shelter receives more individualized attention than at other, larger shelters. We do not euthanize at our shelter, so if a dog comes in with serious behavioral or medical issues, we do everything in our capacity to address those needs, AND we have been 97% successful in these efforts, placing those dogs in permanent homes."
-      image={pawPrint}
+      image={whyPawPrint}
       logo={fomasLogo}
     />
     <MissionBanner
