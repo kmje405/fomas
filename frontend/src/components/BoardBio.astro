@@ -1,22 +1,26 @@
 ---
 import { Image } from "astro:assets";
-import jill from "../images/jill.png";
-const boardMember = "Jill Mulder";
-const position = "President";
-const memberSince = "2018";
 
-const bio =
-    "Jill hails from the flat lands of Central Illinois farm country, relocating to beautiful New Mexico just south of Mountainair in 2018. After selling her share in a small construction company specializing in remodeling and solar, she retired to discover her real calling—the Friends of the Mountainair Animal Shelter. Starting at the top, as a volunteer to walk dogs, she eventually joined the board and has helped the kennel remodel project by digging all the fence postholes. She and her partner foster dogs who struggle at the shelter, anywhere from 2 days to 3 months. She also consults on the many constructions projects FOMAS has in the works and actually enjoys digging post holes! An avid Cubs fan, she has discovered that all her foster dogs love Cubs baseball too. Contact: board@fomas.org";
+interface BoardMemberProps {
+  image: string;
+  name: string;
+  position: string;
+  memberSince: string;
+  bio: string;
+}
+
+const { image, name, position, memberSince, bio } = Astro.props as BoardMemberProps;
 ---
 
-<div class="boardBio flex flex-col items-center mx-4 sm:mx-16 md:mx-24 lg:mx-32">
-    <Image
-        src={jill}
-        alt="Jill Mulder"
-        class=""
-    />
-    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 mb-2 md:mb-4">{boardMember}</h2>
-    <h3 class="text-md sm:text-lg md:text-xl font-semibold text-gray-700 my-1 md:my-2">{position}</h3>
-    <p class="text-sm sm:text-base text-gray-600 mb-1 sm:mb-2">Member since: {memberSince}</p>
-    <p class="text-sm sm:text-base text-gray-600 mb-1 sm:mb-2">{bio}</p>
+<div class="prose-2xl boardBio min-h-screen flex flex-col items-center mx-4 sm:mx-16 md:mx-24 lg:mx-32 my-8">
+  <Image
+    src={image}
+    alt={name}
+    height=300
+    width=300
+  />
+  <h2 class="prose text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 mb-2 md:mb-4">{name}</h2>
+  <h3 class="prose text-md sm:text-lg md:text-xl font-semibold text-gray-700 my-1 md:my-2">{position}</h3>
+  <p class="prose text-sm sm:text-base text-gray-600 mb-1 sm:mb-2">Member since: {memberSince}</p>
+  <p class="prose text-sm sm:text-base text-gray-600 mb-1 sm:mb-2">{bio}</p>
 </div>
