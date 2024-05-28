@@ -19,7 +19,9 @@ const post = await getPost(slug);
 
 <BaseLayout pageTitle={post.title}>
   <Main>
-    <article class="mx-auto prose prose2xl min-h-screen">
+    <article class="mx-auto p-8 prose prose2xl min-h-screen">
+      <!-- Button that will take user back to previous page -->
+      <a href="/blog" class="text-white no-underline  bg-blue-600 p-2 rounded-full">Back to Blog</a>
       <h1 class="mt-8 text-blue-600 text-center">{post.title}</h1>
       {
         post.mainImage && (
@@ -30,7 +32,7 @@ const post = await getPost(slug);
           />
         )
       }
-      <div class="">
+      <div>
         <PortableText value={post.body} />
       </div>
     </article>
