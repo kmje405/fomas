@@ -10,29 +10,21 @@ const pageDescription = "We can't seem to find the page you're looking for.";
 const buttonLabel = "Go Home";
 ---
 
-<!-- Utilizing the Layout component to structure the 404 page. -->
 <Layout pageTitle={pageTitle}>
-  <!-- Main component acts as a semantic container for the primary content. -->
   <Main>
-    <!-- A full-screen div to center the content vertically. -->
     <div class="min-h-screen py-10">
-      <!-- A centered wrapper for the text and image content. -->
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <!-- A heading indicating that the user has reached an unexpected page. -->
         <h1 class="text-4xl font-bold text-gray-900 my-8">{pageHeading}</h1>
-        <!-- Descriptive text to provide more context to the user. -->
         <p class="text-xl text-gray-700 mb-8">{pageDescription}</p>
-        <!-- An image that visually signifies the error, enhancing user experience. -->
         <img
-          src="/doggy404.png"
+          src="/404V.png"
           alt="Page Not Found"
           class="rounded-xl mx-auto w-full max-w-md"
         />
-        <!-- A call-to-action button allowing users to navigate back to the homepage. -->
         <p class="mt-8">
           <a
             href="/"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out"
           >
             {buttonLabel}
           </a>
