@@ -13,24 +13,33 @@ export async function getStaticPaths() {
   }));
 }
 
-
 const { slug } = Astro.params;
 const animal = await getAnimal(slug); // Function to fetch a single animal profile based on slug
 ---
 
 <BaseLayout pageTitle={animal.name}>
   <Main>
-    <article class="mx-auto min-h-screen prose prose-lg">
+    <article class="mx-auto min-h-screen prose prose-lg p-8">
+      
       <h1 class="mt-8 text-blue-600 text-center">{animal.name}</h1>
+      <a href="/dogs" class="text-white no-underline bg-blue-600 p-2 rounded-full">Back to Dogs</a>
       {
-        animal.images && animal.images.length > 0 && (
-          <div class="animal__images flex flex-col-2 gap-6">
+        animal.images && animal.images.length > 0 ? (
+          <div class="animal__images flex flex-col sm:flex-row gap-6">
             {animal.images.map((image:any) => (
               <img
                 class="animal__image"
                 src={urlFor(image).width(400).url()}
               />
             ))}
+          </div>
+        ) : (
+          <div class="animal__images flex flex-col sm:flex-row gap-6">
+            <img
+              class="animal__image"
+              src="/doggie-fallback.webp"
+              alt="Fallback image"
+            />
           </div>
         )
       }
