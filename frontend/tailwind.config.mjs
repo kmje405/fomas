@@ -5,7 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         'curly-div-teal-300': "url('/line-twTeal300.png')",
-        'pawPadSingle': "url('/pawPad.svg')",
+        'pawPadSingleRight': "url('../images/decorations/backingPaw-blue-single-R.svg')",
         'missionBannerImage': "url('/skyBannerBackground.png')",
 
       },
