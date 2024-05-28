@@ -6,19 +6,22 @@ import WhyFomas from "../components/WhyFomas.astro";
 import WhoWeAre from "../components/WhoWeAre.astro";
 import Onebytwo from "../components/Onebytwo.astro";
 import FullPageBanner from "../components/FullPageBanner.astro";
-import pawPrint from "../images/horizontalPawprint.png" 
-import jill from "../images/boardMembers/jillMulderR.png"
-import karen from "../images/boardMembers/karenBernauerL.png"
-import linda from "../images/boardMembers/lindaBrownR.png"
-import phil from "../images/boardMembers/philipCoxL.png"
-import peter from "../images/boardMembers/peterR.png"
+import pawPrint from "../images/horizontalPawprint.png";
+import jill from "../images/boardMembers/jillMulderR.png";
+import karen from "../images/boardMembers/karenBernauerL.png";
+import linda from "../images/boardMembers/lindaBrownR.png";
+import phil from "../images/boardMembers/philipCoxL.png";
+import peter from "../images/boardMembers/peterR.png";
+import Image from "astro/components/Image.astro";
+import orangeSquiggle from "../images/decorations/squiggle-short-amber400.svg";
+import logo from "../images/logos/fomas-full-blue.jpg"
 
 const pageTitle = "About";
 ---
 
 <Layout pageTitle={pageTitle}>
   <Main>
-    <body class="text-center">
+    <body class="text-center items-center">
       <MissionBanner
         title="Our Mission"
         content="Our mission at FOMAS is to provide the highest quality of care to every dog we rescue, to match them with the right families and resources, and to elevate the standard of animal welfare in the greater Mountainair area."
@@ -27,13 +30,18 @@ const pageTitle = "About";
         title="Our Story"
         content="Every dog that comes through the doors of the Mountainair Animal Shelter receives more individualized attention than at other, larger shelters. We do not euthanize at our shelter, so if a dog comes in with serious behavioral or medical issues, we do everything in our capacity to address those needs, AND we have been 97% successful in these efforts, placing those dogs in permanent homes.Our volunteers have single-handedly rescued dozens of dogs from high-kill shelters, rehabilitated them for medical problems or emotional stress and gotten them adopted into loving homes. We believe there is a permanent home for every single dog."
         image={pawPrint}
-        logo={pawPrint}
+        logo={logo}
       />
       <WhoWeAre />
       <h2 class="font-bold text-6xl text-center text-blue-600 my-4">
         Our Board
       </h2>
-      <div class="mx-auto md:max-w-[70%]">
+      <Image
+        src={orangeSquiggle}
+        alt="Orange squiggle"
+        class="mx-auto w-[50%]"
+      />
+      <div class="mx-auto max-w-full items-center"> 
         <Onebytwo
           title="Jill Mulder"
           description="President"
@@ -67,14 +75,13 @@ const pageTitle = "About";
           altText="Phillip Cox, Secretary"
         />
         <Onebytwo
-        title="Peter"
-        description="Secretary"
-        image={peter}
-        reverse={false}
-        buttonLink="/president"
-        altText="Phillip Cox, Secretary"
-      />
-
+          title="Peter"
+          description="Secretary"
+          image={peter}
+          reverse={false}
+          buttonLink="/president"
+          altText="Phillip Cox, Secretary"
+        />
       </div>
 
       <FullPageBanner
