@@ -2,10 +2,6 @@
 import { Image } from 'astro:assets';
 import RightArrowButton from './RightArrowButton.astro';
 
-// TODO: Rename to describe behavior rather than layout CTA Image / with text.
-// TODO: Consider using a variant instead of reverse (image left / image right)
-
-// Define the component's properties
 interface Props {
   title: string;
   description?: string;
@@ -15,11 +11,10 @@ interface Props {
   altText: string;
 }
 
-
-const { title, description, image, buttonLink, reverse = false }: Props = Astro.props;
+const { title, description, image, buttonLink, reverse = false, altText }: Props = Astro.props;
 ---
 
-<div class={`mt-2 mb-4 max-w-[1024px] p-8 grid grid-cols-2 items-center gap-4 bg-white rounded-lg ${reverse ? 'flex-row-reverse' : ''}`}>
+<div class="mx-auto mt-2 mb-4 max-w-[1024px] p-8 grid grid-cols-2 items-center gap-4 bg-white rounded-lg">
   <!-- Content column, order changes if reverse is true -->
   <div class={`flex flex-col justify-between space-y-4 ${reverse ? 'order-last' : 'order-first'}`}>
     <div>
@@ -30,6 +25,6 @@ const { title, description, image, buttonLink, reverse = false }: Props = Astro.
   </div>
   <!-- Image column, order changes if reverse is true -->
   <div class={`${reverse ? 'order-first' : 'order-last'}`}>
-    <Image src={image} alt={title} class="rounded-lg w-full h-auto" />
+    <Image src={image} alt={altText} class="rounded-lg w-full h-auto" />
   </div>
 </div>
