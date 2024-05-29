@@ -1,5 +1,4 @@
 ---
-// Import necessary components and utilities
 import { client } from "../libs/sanity/index";
 import Layout from "../layouts/BaseLayout.astro";
 import AnimalCard from "../components/AnimalCard.astro"; // Adjusted for animal profiles
@@ -12,16 +11,14 @@ import BannerImage from "../images/blog-topper.png";
 const query = `*[_type == "animal" ] | order(name asc) {
   _id,
   slug,
-breed,
-images,
-name,
-bio,
-"friendly_with": friendly_with[],
-"not_friendly_with": not_friendly_with[],
-adoption_status,
-age
-
- 
+  breed,
+  images,
+  name,
+  bio,
+  "friendly_with": friendly_with[],
+  "not_friendly_with": not_friendly_with[],
+  adoption_status,
+  age
 }`;
 
 const dogs = await client.fetch(query);
@@ -31,22 +28,30 @@ const pageTitle = "Adoption";
 <Layout pageTitle={pageTitle}>
   <Main>
     <FullPageBanner
-    backgroundImage="/get-involved-banner.png"
-    headline="Meet Your New Best Friend"
-    buttonText="Adopt Today"
-    buttonLink="/contact"
-/>
+      backgroundImage="/get-involved-banner.png"
+      headline="Meet Your New Best Friend"
+      buttonText="Adopt Today"
+      buttonLink="/contact"
+    />
     <div class="min-h-screen py-8 bg-blue-200">
       <div>
-        <!-- Responsive grid for animal profiles -->
-        <div class="grid grid-cols-1 md:grid-cols-2 mx-auto">
-          <!-- Map through animals and render each AnimalCard -->
-          {dogs.map((animal:any) => (
-            <div> <!-- Ensure each card takes full width -->
-              <AnimalCard animal={animal} />
-            </div>
-          ))}
-        </div>
+        <!-- Conditional rendering based on the presence of dogs -->
+        {dogs.length > 0 ? (
+          <!-- Responsive grid for animal profiles -->
+          <div class="grid grid-cols-1 md:grid-cols-2 mx-auto">
+            <!-- Map through animals and render each AnimalCard -->
+            {dogs.map((animal:any) => (
+              <div> <!-- Ensure each card takes full width -->
+                <AnimalCard animal={animal} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <!-- Message when no dogs are available -->
+          <div class="flex justify-center items-center min-h-screen">
+            <p class="text-2xl text-gray-700">No animals available for adoption at the moment. Please check back later.</p>
+          </div>
+        )}
       </div>
     </div>
     <LetsConnect />
