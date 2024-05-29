@@ -22,7 +22,6 @@ const query = `*[_type == "animal" ] | order(name asc) {
 }`;
 
 const animals = await client.fetch(query);
-console.log(animals);
 
 const pageTitle = "Adoption";
 ---
