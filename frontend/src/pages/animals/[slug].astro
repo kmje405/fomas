@@ -44,9 +44,9 @@ const animal = await getAnimal(slug); // Function to fetch a single animal profi
         )
       }
       <div class="my-4">
-        <PortableText value={animal.bio} />
       </div>
       <div class="my-6">
+        <p>{animal.bio}</p>
         <strong>Breed:</strong> {animal.breed}
         <br />
         <strong>Age:</strong> {animal.age}
