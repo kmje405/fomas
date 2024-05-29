@@ -15,6 +15,7 @@ import peter from "../images/boardMembers/peterR.png";
 import Image from "astro/components/Image.astro";
 import orangeSquiggle from "../images/decorations/squiggle-short-amber400.svg";
 import logo from "../images/logos/fomas-full-blue.jpg"
+import { missionStatement } from "../constants";
 
 const pageTitle = "About";
 ---
@@ -24,11 +25,9 @@ const pageTitle = "About";
     <body class="text-center items-center">
       <MissionBanner
         title="Our Mission"
-        content="Our mission at FOMAS is to provide the highest quality of care to every dog we rescue, to match them with the right families and resources, and to elevate the standard of animal welfare in the greater Mountainair area."
-      />
+        content={missionStatement}
       <WhyFomas
         title="Our Story"
-        content="Every dog that comes through the doors of the Mountainair Animal Shelter receives more individualized attention than at other, larger shelters. We do not euthanize at our shelter, so if a dog comes in with serious behavioral or medical issues, we do everything in our capacity to address those needs, AND we have been 97% successful in these efforts, placing those dogs in permanent homes.Our volunteers have single-handedly rescued dozens of dogs from high-kill shelters, rehabilitated them for medical problems or emotional stress and gotten them adopted into loving homes. We believe there is a permanent home for every single dog."
         image={pawPrint}
         logo={logo}
       />
