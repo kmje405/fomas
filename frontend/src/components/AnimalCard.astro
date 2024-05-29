@@ -26,7 +26,7 @@ const mainImageUrl = images?.length > 0 ? urlFor(images[0]).url() : placeholderI
       <p class="text-md text-blue-950">Age: {age}</p>
       <div class="flex flex-wrap justify-center gap-2 mt-3">
         <p class="prose">Good with: </p>
-        {friendly_with.map((friend: string) => ( 
+        {friendly_with?.map((friend: string) => ( 
         <span class="px-3 py-1 rounded-full bg-blue-200 text-blue-800 text-md font-semibold">{friend}</span>
         ))}
       </div>

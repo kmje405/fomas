@@ -21,7 +21,8 @@ const query = `*[_type == "animal" ] | order(name asc) {
   age
 }`;
 
-const dogs = await client.fetch(query);
+const animals = await client.fetch(query);
+console.log(animals);
 
 const pageTitle = "Adoption";
 ---
@@ -36,11 +37,11 @@ const pageTitle = "Adoption";
     <div class="min-h-screen py-8 bg-blue-200">
       <div>
         <!-- Conditional rendering based on the presence of dogs -->
-        {dogs.length > 0 ? (
+        {animals.length > 0 ? (
           <!-- Responsive grid for animal profiles -->
           <div class="grid grid-cols-1 md:grid-cols-2 mx-auto">
             <!-- Map through animals and render each AnimalCard -->
-            {dogs.map((animal:any) => (
+            {animals.map((animal:any) => (
               <div> <!-- Ensure each card takes full width -->
                 <AnimalCard animal={animal} />
               </div>
