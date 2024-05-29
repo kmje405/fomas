@@ -12,19 +12,25 @@ interface BoardMemberProps {
 const { image, name, position, memberSince, bio } = Astro.props as BoardMemberProps;
 ---
 <!-- Button to previous page -->
-
-
-<div class="prose-2xl boardBio min-h-screen flex flex-col items-center mx-4 sm:mx-16 md:mx-24 lg:mx-32 my-8">
-
+<div class="prose-2xl board-bio min-h-screen flex flex-col items-center sm:mx-16 md:mx-24 lg:mx-32 my-8">
   <a href="/about" class="text-sm bg-blue-600 text-white p-2 rounded-full self-start">Back to About</a>
-  <Image
-    src={image}
-    alt={name}
-    height=300
-    width=300
-  />
-  <h2 class="prose text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 mb-2 md:mb-4">{name}</h2>
-  <h3 class="prose text-md sm:text-lg md:text-xl font-semibold text-gray-700 my-1 md:my-2">{position}</h3>
-  <p class="prose text-sm sm:text-base text-gray-600 mb-1 sm:mb-2">Member since: {memberSince}</p>
-  <p class="prose text-md sm:text-base text-gray-600 mb-1 sm:mb-2">{bio}</p>
+
+  {image ? (
+    <Image
+      src={image}
+      alt={`Photo of ${name}`}
+      height={600}
+      width={600}
+      class="rounded-full mt-4"
+    />
+  ) : (
+    <div class="bg-gray-200 rounded-full h-60 w-60 mt-4 flex items-center justify-center">
+      <span>No Image Available</span>
+    </div>
+  )}
+
+  <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-600 mb-2 mt-4">{name || "Name not available"}</h2>
+  <h3 class="text-md sm:text-lg md:text-xl font-semibold text-gray-700 my-2">{position || "Position not available"}</h3>
+  <p class="text-sm sm:text-base text-gray-600 mb-2">Member since: {memberSince || "N/A"}</p>
+  <p class="prose text-md sm:text-base text-gray-600 mb-4">{bio || "Bio not available"}</p>
 </div>

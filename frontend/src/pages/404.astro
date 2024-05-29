@@ -1,20 +1,20 @@
 ---
-// Importing the necessary components and layouts for the 404 page.
 import Layout from "../layouts/BaseLayout.astro";
 import Main from "../components/Main.astro";
 
-// Setting up constants for the page's title, heading, description, and button label.
 const pageTitle = "404";
-const pageHeading = "Oops!";
+const pageHeading = "Ruh Roh!";
 const pageDescription = "We can't seem to find the page you're looking for.";
 const buttonLabel = "Go Home";
 ---
 
+
+<!-- TODO: Add Yellow Squiggle according to the figma file. -->
 <Layout pageTitle={pageTitle}>
   <Main>
     <div class="min-h-screen py-10">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold text-gray-900 my-8">{pageHeading}</h1>
+        <h1 class="text-6xl font-bold text-blue-600 my-8">{pageHeading}</h1>
         <p class="text-xl text-gray-700 mb-8">{pageDescription}</p>
         <img
           src="/404V.png"
