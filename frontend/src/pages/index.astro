@@ -12,6 +12,7 @@ import volunteerPawPrint from "../images/pawPrints/volunteerL.png";
 import whyPawPrint from "../images/pawPrints/whyFomasV.png";
 import fomasLogo from "../images/logos/fomas-full-blue.jpg";
 import Onebytwo from "../components/Onebytwo.astro";
+import { missionStatement } from "../constants";
 
 
 const pageTitle = "Home";
@@ -53,7 +54,7 @@ const pageTitle = "Home";
     />
     <MissionBanner
       title="Our Mission"
-      content="To provide a safe and loving environment for animals in need."
+      content={missionStatement}
     />
     <SupportOurMission />
   <LetsConnect />
