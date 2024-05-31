@@ -19,25 +19,11 @@ This project is a dynamic, responsive animal shelter website designed to facilit
 - **Backend/CMS**: Sanity.io
 - **Styling**: Tailwind CSS
 - **Deployment**: Netlify
-- **Other Tools**: [Any additional tools used]
-
-## Project Structure 
-/
-|--public/
-|--src/
-|   |--components/
-|   |--layouts/
-|   |--pages/
-|   |--styles/
-|--.env
-|--astro.config.mjs
-|--README.md
-
 
 ## Getting Started
 
 # Clone the repository
-git clone [your-repository-link]
+git clone git@github.com:kmje405/fomas.git
 
 # Navigate to the project directory
 cd animal-shelter-website
@@ -45,5 +31,5 @@ cd animal-shelter-website
 # Install dependencies with pnpm
 pnpm install
 
-# Serve with hot reload at localhost:3000
-pnpm run dev
+# Serve with hot reload at localhost:4321
+pnpm dev
