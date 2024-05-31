@@ -12,14 +12,14 @@ import {PortableText} from "astro-portabletext";
         <!-- Use urlFor to generate the image URL -->
         <img src={urlFor(post.mainImage).url()} alt={post.title} class="w-full h-72 object-cover rounded-2xl" />
         <div class="py-4 min-h-[200px]">
-          <h2 class="font-bold text-xl mb-2">{post.title}</h2>
-          <div class="text-gray-700 text-base mb-4 line-clamp-2">
+          <h2 class="font-bold text-blue-600 text-center text-xl mb-2">{post.title}</h2>
+          <div class="text-gray-700 text-base mb-4 text-center line-clamp-2">
             <!-- Use PortableText component to render post.body or excerpt -->
             <PortableText value={post.body} />
           </div>
           <div class="flex items-center justify-between text-gray-600 text-sm">
             <!-- <p>{post.author}</p> -->
-            <p class="prose">Published On: {new Date(post.publishedAt).toLocaleDateString()}</p>
+            <p class="text-center">Published On: {new Date(post.publishedAt).toLocaleDateString()}</p>
           </div>
         </div>
       </div>
