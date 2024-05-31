@@ -1,27 +1,27 @@
 ---
 import RightArrowButton from "./RightArrowButton.astro";
 const animalDescription = "Every dog that comes through the doors of the Mountainair Animal Shelter receives more individualized attention than at other, larger shelters. We do not euthanize at our shelter.";
-const cardTitle = "Meet Sophie!";
+const cardTitle = "Meet Gia!";
 const cardHeading = "Success Story";
 ---
 <!-- Outer container with full viewport width and teal background -->
 <div class="bg-teal-300 w-full mt-20 flex justify-center">
   <div class="card w-[90%] max-w-md bg-white rounded-3xl shadow-xl transition-all border-2 border-teal-300 duration-300 ease-in-out hover:shadow-2xl my-[-2rem]">
     <div class="p-4">
-      <p class="text-4xl font-bold px-4 text-blue-500">
+      <p class="text-4xl text-center font-bold px-4 text-blue-500">
         {cardHeading}
       </p>
-      <p class="text-2xl font-bold py-2 px-4 text-blue-500">{cardTitle}</p>
+      <p class="text-2xl text-center font-bold py-2 px-4 text-blue-500">{cardTitle}</p>
       <img
         class="rounded-3xl max-h-60 w-full object-cover"
-        src="/doggy.jpeg"
-        alt="Sophie"
+        src="/gia.jpg"
+        alt="Gia"
       />
       <div class="px-4 py-2">
         <p class="prose prose-sm max-w-none">{animalDescription}</p>
       </div>
       <div class="flex items-center justify-center">
-        <RightArrowButton path="/dogs" />
+        <RightArrowButton path="https:/fomas.org/animals/gia" />
       </div>
     </div>
   </div>
