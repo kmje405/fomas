@@ -3,6 +3,7 @@ import Main from "../components/Main.astro"
 ---
 
 <Main>
+  <div class="min-h-screen">
 <form name="adoptionForm" method="POST" data-netlify="true" class="flex flex-col bg-teal-300 max-w-lg mx-auto my-8 p-6 rounded-3xl shadow">
     <h2 class="text-center text-white font-bold text-5xl mb-6">Adoption Application</h2>
     <input type="hidden" name="form-name" value="adoptionForm" />
@@ -41,4 +42,5 @@ import Main from "../components/Main.astro"
       </button>
     </div>
 </form>
+</div>
 </Main>
