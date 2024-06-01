@@ -18,35 +18,37 @@ import RecurringDonationCard from "../components/RecurringDonationCard.astro";
             content="Your donation helps FOMAS put dogs in the most loving homes and provide them with care."
         />
         <div class="donation-cards">
+            <h2 class="text-3xl text-blue-600 py-4 font-bold text-center">
+                Recurring Donation
             <div class="flex flex-wrap justify-center gap-4">
               <RecurringDonationCard 
                 amount="5"
                 paymentLinkUrl="https://buy.stripe.com/7sI6ru0xwfUvesg146"
                 title="$5 Monthly Donation"
-                description="Your recurring donation helps us to continue our mission and make a difference."
+                description="After selecting this option and confirming via Stripe, your payment method will be charged $5.00 USD per month until you email us to cancel."
               />  
               <RecurringDonationCard 
                 amount="10"
                 paymentLinkUrl="https://buy.stripe.com/9AQaHK942eQrdocfZ1"
                 title="$10 Monthly Donation"
-                description="Your recurring donation helps us to continue our mission and make a difference."
+                description="After selecting this option and confirming via Stripe, your payment method will be charged $10.00 USD per month until you email us to cancel."
               />    
               <RecurringDonationCard 
                 amount="25"
                 paymentLinkUrl="https://buy.stripe.com/8wMg247ZYbEfdoc3cd"
                 title="$25 Monthly Donation"
-                description="Your recurring donation helps us to continue our mission and make a difference."
+                description="After selecting this option and confirming via Stripe, your payment method will be charged $25.00 USD per month until you email us to cancel."
               />    
               <RecurringDonationCard 
                 amount="50"
                 paymentLinkUrl="https://buy.stripe.com/fZeg241BA9w7ac06os"
                 title="$50 Monthly Donation"
-                description="Your recurring donation helps us to continue our mission and make a difference."
+                description="After selecting this option and confirming via Stripe, your payment method will be charged $50.00 USD per month until you email us to cancel."
               />    
             </div>
-            <p class="mt-4 text-center">
-              For a monthly recurring donation different in amount or frequency from those listed above, please reach out via email to 
-              <a href="mailto:woof@fomas.org" class="text-blue-500 underline">woof@fomas.org</a>
+            <p class="mt-4 text-sm text-center">
+              For a monthly recurring donation different in amount or frequency from those listed above, or to cancel your subscription, please reach out via our contact form
+              <a href="/contact" class="text-blue-500 underline">here.</a>
             </p>
           </div>
         <h2 class="text-6xl text-blue-600 py-4 font-bold text-center">
