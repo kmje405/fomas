@@ -8,6 +8,7 @@ import LetsConnect from "../components/LetsConnect.astro";
 const pageTitle = "Donate";
 import volunteerPawPrint from "../images/pawPrints/volunteerL.png";
 import helpPawPrint from "../images/pawPrints/amazonWishlistR.png"
+import RecurringDonationCard from "../components/RecurringDonationCard.astro";
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -16,6 +17,38 @@ import helpPawPrint from "../images/pawPrints/amazonWishlistR.png"
             title="Thank you!"
             content="Your donation helps FOMAS put dogs in the most loving homes and provide them with care."
         />
+        <div class="donation-cards">
+            <div class="flex flex-wrap justify-center gap-4">
+              <RecurringDonationCard 
+                amount="5"
+                paymentLinkUrl="https://buy.stripe.com/7sI6ru0xwfUvesg146"
+                title="$5 Monthly Donation"
+                description="Your recurring donation helps us to continue our mission and make a difference."
+              />  
+              <RecurringDonationCard 
+                amount="10"
+                paymentLinkUrl="https://buy.stripe.com/9AQaHK942eQrdocfZ1"
+                title="$10 Monthly Donation"
+                description="Your recurring donation helps us to continue our mission and make a difference."
+              />    
+              <RecurringDonationCard 
+                amount="25"
+                paymentLinkUrl="https://buy.stripe.com/8wMg247ZYbEfdoc3cd"
+                title="$25 Monthly Donation"
+                description="Your recurring donation helps us to continue our mission and make a difference."
+              />    
+              <RecurringDonationCard 
+                amount="50"
+                paymentLinkUrl="https://buy.stripe.com/fZeg241BA9w7ac06os"
+                title="$50 Monthly Donation"
+                description="Your recurring donation helps us to continue our mission and make a difference."
+              />    
+            </div>
+            <p class="mt-4 text-center">
+              For a monthly recurring donation different in amount or frequency from those listed above, please reach out via email to 
+              <a href="mailto:woof@fomas.org" class="text-blue-500 underline">woof@fomas.org</a>
+            </p>
+          </div>
         <h2 class="text-6xl text-blue-600 py-4 font-bold text-center">
             Other Ways To Give
         </h2>
@@ -42,5 +75,6 @@ import helpPawPrint from "../images/pawPrints/amazonWishlistR.png"
             buttonLink="/dogs"
         />
         <LetsConnect />
+
     </Main>
 </Layout>
