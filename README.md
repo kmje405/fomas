@@ -1,4 +1,4 @@
-![Homepage Screenshot](/src/pages/fomas_home_screenshot.png)
+![Homepage Screenshot](frontend/public/fomas_home_screenshot.png)
 
 # Friends of Mountainair Animal Shelter (FOMAS) - Astro with Sanity CMS
 
