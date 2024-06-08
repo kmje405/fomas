@@ -5,10 +5,9 @@ import AnimalCard from "../components/AnimalCard.astro"; // Adjusted for animal 
 import Main from "../components/Main.astro";
 import FullPageBanner from "../components/FullPageBanner.astro";
 import LetsConnect from "../components/LetsConnect.astro";
-import BannerImage from "../images/blog-topper.png";
 
 // Fetch animal profiles
-const query = `*[_type == "animal" ] | order(name asc) {
+const query = `*[_type == "animal" ] | order(name desc) {
   _id,
   slug,
   breed,
