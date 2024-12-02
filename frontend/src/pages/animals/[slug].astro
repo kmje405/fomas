@@ -3,7 +3,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Main from "../../components/Main.astro";
 import { getAnimals, getAnimal } from "../../../src/utils/sanity"; // Adjust the import paths based on your project structure
 import { urlFor } from "../../libs/sanity/image";
-import {PortableText} from "astro-portabletext";
 
 export async function getStaticPaths() {
   const animals = await getAnimals(); // Function to fetch all animal profiles
