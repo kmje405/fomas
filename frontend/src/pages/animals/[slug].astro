@@ -4,6 +4,7 @@ import Main from "../../components/Main.astro";
 import { getAnimals, getAnimal } from "../../../src/utils/sanity";
 import { urlFor } from "../../libs/sanity/image";
 
+// Fetch static paths for the animals
 export async function getStaticPaths() {
   const animals = await getAnimals();
   return animals.map((animal: any) => ({
@@ -11,6 +12,7 @@ export async function getStaticPaths() {
   }));
 }
 
+// Fetch specific animal data
 const { slug } = Astro.params;
 const animal = await getAnimal(slug);
 ---
@@ -18,17 +20,18 @@ const animal = await getAnimal(slug);
 <BaseLayout pageTitle={animal.name}>
   <Main>
     <article class="mx-auto min-h-screen prose prose-lg p-8">
+      <!-- Page Title -->
       <h1 class="mt-8 text-blue-600 text-center">{animal.name}</h1>
-      <a href="/dogs" class="text-white no-underline bg-blue-600 p-2 rounded-full">Back to Dogs</a>
+      <a href="/dogs" class="text-white no-underline bg-blue-600 p-2 rounded-full">
+        Back to Dogs
+      </a>
 
+      <!-- Slider Section -->
       {animal.images && animal.images.length > 0 ? (
-        <!-- Slider main container -->
-        <div class="swiper w-full max-w-3xl mx-auto my-6">
-          <!-- Additional required wrapper -->
+        <div class="swiper">
           <div class="swiper-wrapper">
-            <!-- Slides -->
             {animal.images.map((image: any, index: number) => (
-              <div class="swiper-slide flex justify-center">
+              <div class="swiper-slide" key={index}>
                 <img
                   class="rounded-lg shadow-md"
                   src={urlFor(image).width(400).url()}
@@ -37,11 +40,8 @@ const animal = await getAnimal(slug);
               </div>
             ))}
           </div>
-
-          <!-- Pagination -->
+          <!-- Slider Controls -->
           <div class="swiper-pagination"></div>
-
-          <!-- Navigation Buttons -->
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
@@ -55,6 +55,7 @@ const animal = await getAnimal(slug);
         </div>
       )}
 
+      <!-- Animal Details Section -->
       <div class="my-6">
         <p>{animal.bio}</p>
         <strong>Breed:</strong> {animal.breed}
@@ -69,4 +70,47 @@ const animal = await getAnimal(slug);
       </div>
     </article>
   </Main>
+
+  <!-- Swiper Initialization Script -->
+  <script>
+    import Swiper, { Navigation, Pagination } from "swiper";
+    import "swiper/css";
+    import "swiper/css/navigation";
+    import "swiper/css/pagination";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      new Swiper(".swiper", {
+        modules: [Navigation, Pagination],
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    });
+  </script>
+
+  <!-- Component Scoped Styles -->
+  <style>
+    .swiper {
+      width: 600px;
+      height: 300px;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-pagination-bullet {
+      background-color: #1d4ed8; /* Tailwind's blue-600 */
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #1d4ed8; /* Tailwind's blue-600 */
+    }
+  </style>
 </BaseLayout>
