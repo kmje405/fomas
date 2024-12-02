@@ -28,7 +28,7 @@ const animal = await getAnimal(slug);
           <div class="swiper-wrapper">
             <!-- Slides -->
             {animal.images.map((image: any, index: number) => (
-              <div class="swiper-slide flex justify-center" key={index}>
+              <div class="swiper-slide flex justify-center">
                 <img
                   class="rounded-lg shadow-md"
                   src={urlFor(image).width(400).url()}

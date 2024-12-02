@@ -7,6 +7,3 @@ const config: ClientConfig = {
   apiVersion: '2024-02-18', // use current date (YYYY-MM-DD) to target the latest API version
 }
 export const client = createClient(config)
-
-const data = await client.fetch<number>(`count(*)`)
-// data is typed as `number`
