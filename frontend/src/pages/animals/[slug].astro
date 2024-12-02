@@ -25,8 +25,9 @@ const animal = await getAnimal(slug);
         Back to Dogs
       </a>
 
+      <!-- Swiper Slider -->
       {animal.images && animal.images.length > 0 ? (
-        <div class="swiper w-full max-w-3xl mx-auto my-6">
+        <div class="swiper mySwiper w-full max-w-3xl mx-auto my-6">
           <div class="swiper-wrapper">
             {animal.images.map((image: any, index: number) => (
               <div class="swiper-slide">
@@ -52,6 +53,7 @@ const animal = await getAnimal(slug);
         </div>
       )}
 
+      <!-- Animal Details -->
       <div class="my-6">
         <p>{animal.bio}</p>
         <strong>Breed:</strong> {animal.breed}
@@ -67,23 +69,32 @@ const animal = await getAnimal(slug);
     </article>
   </Main>
 
-  <!-- Swiper CDN -->
+  <!-- Swiper Styles and Scripts -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    declare const Swiper: any;
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    //@ts-ignore
+    if (typeof Swiper === "undefined") {
+      console.error("Swiper is not loaded. Check the CDN script.");
+      return;
+    }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      new Swiper(".swiper", {
-      loop: true,
+    // Check if there are enough slides to enable looping
+    const swiperSlides = document.querySelectorAll(".swiper-slide");
+    const enableLoop = swiperSlides.length > 1;
+
+    // Initialize Swiper
+    //@ts-ignore
+    var swiper = new Swiper(".mySwiper", {
+      loop: enableLoop,
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
       },
-      speed: 1000,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -92,19 +103,17 @@ const animal = await getAnimal(slug);
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      breakpoints: {
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-      },
-      });
     });
-  </script>
 
+    console.log("Swiper instance initialized:", swiper); // Debugging
+  });
+</script>
+
+  <!-- Scoped Styles -->
   <style>
     .swiper {
-      width: 1200px;
-      height: 600px;
+      width: 100%;
+      height: 400px;
     }
     .swiper-slide {
       display: flex;
@@ -117,6 +126,12 @@ const animal = await getAnimal(slug);
     .swiper-button-next,
     .swiper-button-prev {
       color: #1d4ed8; /* Tailwind's blue-600 */
+    }
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
   </style>
 </BaseLayout>
