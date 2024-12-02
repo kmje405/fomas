@@ -1,49 +1,60 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Main from "../../components/Main.astro";
-import { getAnimals, getAnimal } from "../../../src/utils/sanity"; // Adjust the import paths based on your project structure
+import { getAnimals, getAnimal } from "../../../src/utils/sanity";
 import { urlFor } from "../../libs/sanity/image";
 
 export async function getStaticPaths() {
-  const animals = await getAnimals(); // Function to fetch all animal profiles
+  const animals = await getAnimals();
   return animals.map((animal: any) => ({
     params: { slug: animal.slug.current },
-
   }));
 }
 
 const { slug } = Astro.params;
-const animal = await getAnimal(slug); // Function to fetch a single animal profile based on slug
+const animal = await getAnimal(slug);
 ---
 
 <BaseLayout pageTitle={animal.name}>
   <Main>
     <article class="mx-auto min-h-screen prose prose-lg p-8">
-      
       <h1 class="mt-8 text-blue-600 text-center">{animal.name}</h1>
       <a href="/dogs" class="text-white no-underline bg-blue-600 p-2 rounded-full">Back to Dogs</a>
-      {
-        animal.images && animal.images.length > 0 ? (
-          <div class="animal__images flex flex-col sm:flex-row gap-6">
-            {animal.images.map((image:any) => (
-              <img
-                class="animal__image"
-                src={urlFor(image).width(400).url()}
-              />
+
+      {animal.images && animal.images.length > 0 ? (
+        <!-- Slider main container -->
+        <div class="swiper w-full max-w-3xl mx-auto my-6">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            {animal.images.map((image: any, index: number) => (
+              <div class="swiper-slide flex justify-center" key={index}>
+                <img
+                  class="rounded-lg shadow-md"
+                  src={urlFor(image).width(400).url()}
+                  alt={`Image ${index + 1} of ${animal.name}`}
+                />
+              </div>
             ))}
           </div>
-        ) : (
-          <div class="animal__images flex flex-col sm:flex-row gap-6">
-            <img
-              class="animal__image"
-              src="/doggie-fallback.webp"
-              alt="Fallback image"
-            />
-          </div>
-        )
-      }
-      <div class="my-4">
-      </div>
+
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- Navigation Buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      ) : (
+        <div class="animal__images flex flex-col sm:flex-row gap-6">
+          <img
+            class="animal__image"
+            src="/doggie-fallback.webp"
+            alt="Fallback image"
+          />
+        </div>
+      )}
+
       <div class="my-6">
         <p>{animal.bio}</p>
         <strong>Breed:</strong> {animal.breed}
