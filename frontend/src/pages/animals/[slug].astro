@@ -26,12 +26,13 @@ const animal = await getAnimal(slug);
         Back to Dogs
       </a>
 
-      <!-- Slider Section -->
+      <!-- Swiper Slider -->
       {animal.images && animal.images.length > 0 ? (
-        <div class="swiper">
+        <div class="swiper w-full max-w-3xl mx-auto my-6">
+          <!-- Wrapper -->
           <div class="swiper-wrapper">
             {animal.images.map((image: any, index: number) => (
-              <div class="swiper-slide" key={index}>
+              <div class="swiper-slide">
                 <img
                   class="rounded-lg shadow-md"
                   src={urlFor(image).width(400).url()}
@@ -40,7 +41,7 @@ const animal = await getAnimal(slug);
               </div>
             ))}
           </div>
-          <!-- Slider Controls -->
+          <!-- Pagination and Navigation Controls -->
           <div class="swiper-pagination"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
@@ -55,7 +56,7 @@ const animal = await getAnimal(slug);
         </div>
       )}
 
-      <!-- Animal Details Section -->
+      <!-- Animal Details -->
       <div class="my-6">
         <p>{animal.bio}</p>
         <strong>Breed:</strong> {animal.breed}
@@ -71,16 +72,16 @@ const animal = await getAnimal(slug);
     </article>
   </Main>
 
-  <!-- Swiper Initialization Script -->
+  <!-- Swiper Styles and Scripts -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    import Swiper, { Navigation, Pagination } from "swiper";
-    import "swiper/css";
-    import "swiper/css/navigation";
-    import "swiper/css/pagination";
-
+    declare const Swiper:any;
     document.addEventListener("DOMContentLoaded", () => {
       new Swiper(".swiper", {
-        modules: [Navigation, Pagination],
         loop: true,
         pagination: {
           el: ".swiper-pagination",
@@ -94,7 +95,7 @@ const animal = await getAnimal(slug);
     });
   </script>
 
-  <!-- Component Scoped Styles -->
+  <!-- Scoped Styles -->
   <style>
     .swiper {
       width: 600px;
