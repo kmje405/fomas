@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Main from "../../components/Main.astro";
 import { getAnimals, getAnimal } from "../../../src/utils/sanity";
 import { urlFor } from "../../libs/sanity/image";
+import { Image } from "astro:assets";
 
 // Fetch static paths for the animals
 export async function getStaticPaths() {
@@ -45,7 +46,7 @@ const animal = await getAnimal(slug);
         </div>
       ) : (
         <div class="animal__images flex flex-col sm:flex-row gap-6">
-          <img
+          <Image
             class="animal__image"
             src="/doggie-fallback.webp"
             alt="Fallback image"

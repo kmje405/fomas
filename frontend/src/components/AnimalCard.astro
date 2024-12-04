@@ -23,13 +23,21 @@ const mainImageUrl = images?.length > 0 ? urlFor(images[0]).url() : placeholderI
     <div class="px-4 py-2 text-center flex-col stretch">
       <h2 class="text-3xl font-extrabold text-blue-600">{name}</h2>
       <p class="text-xl text-blue-950">Breed: {breed}</p>
-      <p class="text-md text-blue-950">Age: {age} years old</p>
+      <p class="text-md text-blue-950">Age: {age}</p>
       <div class="flex flex-wrap justify-center gap-2 mt-3">
         <p class="prose">Good with: </p>
-        {friendly_with?.map((friend: string) => ( 
-        <span class="px-3 py-1 rounded-full bg-blue-200 text-blue-800 text-md font-semibold">{friend}</span>
-        ))}
+        {friendly_with &&
+          friendly_with
+            .filter((friend: string) => friend.trim() !== "") // Filter out empty strings
+            .map((friend: string) => (
+              <span
+                key={friend} // Key is necessary for lists
+                class="px-3 py-1 rounded-full bg-blue-200 text-blue-800 text-md font-semibold"
+              >
+                {friend.toUpperCase()}
+              </span>
+            ))}
       </div>
-    </div>
+          </div>
   </a>
 </div>
