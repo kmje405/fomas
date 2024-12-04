@@ -9,25 +9,29 @@ import LetsConnect from "../components/LetsConnect.astro";
 
 // Fetch posts
 const query = `*[_type == "post"]`;
+let posts = await client.fetch(query);
 
-const posts = await client.fetch(query);
+// Sort posts by `publishedAt` (oldest to newest)
+posts = posts.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+
 const pageTitle = "Blog";
 ---
+
 <Layout pageTitle={pageTitle}>
   <Main>
     <FullPageBanner
-    backgroundImage="/get-involved-banner.png"
-    headline="Meet Your New Best Friend"
-    buttonText="Adopt Today"
-    buttonLink="/contact"
-/>
+      backgroundImage="/get-involved-banner.png"
+      headline="Meet Your New Best Friend"
+      buttonText="Adopt Today"
+      buttonLink="/contact"
+    />
     <div class="min-h-screen py-10 bg-blue-200">
-      <div class=" mx-auto">
+      <div class="mx-auto">
         <!-- Responsive grid: single column by default, 3 columns from 'md' breakpoint and up -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto">
           <!-- Map through posts and render each BlogCard -->
-          {posts.map((post:any) => (
-            <div class=""> <!-- Use w-full to ensure each card takes up the full width of its grid cell -->
+          {posts.map((post: any) => (
+            <div> <!-- Use w-full to ensure each card takes up the full width of its grid cell -->
               <BlogCard post={post} />
             </div>
           ))}
@@ -37,13 +41,3 @@ const pageTitle = "Blog";
     <LetsConnect />
   </Main>
 </Layout>
-
-<!-- 
-&& defined(slug)] | order(publishedAt desc) {
-  _id,
-  title,
-  slug,
-  publishedAt,
-  mainImage,
-  body,
-  "author": author->name, -->
