@@ -88,10 +88,16 @@ export default defineType({
       name: 'images',
       title: 'Images',
       type: 'array',
-      of: [{ type: 'image' }],
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true // Enable hotspot for each image
+          }
+        }
+      ],
       options: {
-        layout: 'grid',
-        hotspot: true
+        layout: 'grid' // Grid layout for the images array
       }
     }),
     defineField({
