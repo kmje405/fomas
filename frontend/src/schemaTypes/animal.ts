@@ -16,7 +16,7 @@ export default defineType({
       type: 'slug',
       options: {
         source: 'name',
-        maxLength: 200, // You can adjust this length as needed
+        maxLength: 200
       }
     }),
     defineField({
@@ -41,50 +41,6 @@ export default defineType({
       }
     }),
     defineField({
-      name: 'size',
-      title: 'Size',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Small', value: 'small' },
-          { title: 'Medium', value: 'medium' },
-          { title: 'Large', value: 'large' }
-        ]
-      }
-    }),
-    defineField({
-      name: 'vaccinated',
-      title: 'Vaccinated',
-      type: 'boolean'
-    }),
-    defineField({
-      name: 'spayed_neutered',
-      title: 'Spayed/Neutered',
-      type: 'boolean'
-    }),
-    defineField({
-      name: 'special_needs',
-      title: 'Special Needs',
-      type: 'boolean'
-    }),
-    defineField({
-      name: 'friendly_with',
-      title: 'Friendly With',
-      type: 'array',
-      of: [{ type: 'string' }]
-    }),
-    defineField({
-      name: 'not_friendly_with',
-      title: 'Not Friendly With',
-      type: 'array',
-      of: [{ type: 'string' }]
-    }),
-    defineField({
-      name: 'bio',
-      title: 'Bio',
-      type: 'text'
-    }),
-    defineField({
       name: 'images',
       title: 'Images',
       type: 'array',
@@ -92,12 +48,26 @@ export default defineType({
         {
           type: 'image',
           options: {
-            hotspot: true // Enable hotspot for each image
-          }
+            hotspot: true // Enables hotspot selection
+          },
+          fields: [
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'Caption',
+              description: 'Brief description of the image'
+            },
+            {
+              name: 'attribution',
+              type: 'string',
+              title: 'Attribution',
+              description: 'Credit for the image'
+            }
+          ]
         }
       ],
       options: {
-        layout: 'grid' // Grid layout for the images array
+        layout: 'grid'
       }
     }),
     defineField({
