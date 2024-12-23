@@ -90,7 +90,8 @@ export default defineType({
       type: 'array',
       of: [{ type: 'image' }],
       options: {
-        layout: 'grid'
+        layout: 'grid',
+        hotspot: true
       }
     }),
     defineField({
